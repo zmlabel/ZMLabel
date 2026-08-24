@@ -8,6 +8,15 @@ const path = require("path");
 // ==========================================
 dotenv.config();
 
+const app = express();
+
+app.use(cors({ 
+  origin: "https://zm-label.vercel.app",
+  credentials: true 
+}));
+
+app.use(express.json());
+
 // ==========================================
 // DATABASE
 // ==========================================

@@ -10,10 +10,7 @@
 /* =========================================================
    API CONFIG
 ========================================================= */
-
-const API_ROOT =
-    window.ZM_API_BASE ||
-    "http://localhost:5000/api";
+const API_URL = "https://zmlabel-production.up.railway.app";
 
 const PRODUCTS_API =
     `${API_ROOT}/products`;
