@@ -72,16 +72,16 @@ app.get("/", (req, res) => {
 // ==========================================
 // API ROUTES
 // ==========================================
-app.use("/api/auth", authRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/orders", orderRoutes);
-app.use("/api/cart", cartRoutes);
-app.use("/api/wishlist", wishlistRoutes);
-app.use("/api/ai", aiRoutes);
-app.use("/api/reviews", reviewRoutes);
-app.use("/api/admin", adminRoutes);
-app.use("/api/coupons", couponRoutes);
-app.use("/api/payments", paymentRoutes);
+app.use("/auth", authRoutes);
+app.use("/products", productRoutes);
+app.use("/orders", orderRoutes);
+app.use("/cart", cartRoutes);
+app.use("/wishlist", wishlistRoutes);
+app.use("/ai", aiRoutes);
+app.use("/reviews", reviewRoutes);
+app.use("/admin", adminRoutes);
+app.use("/coupons", couponRoutes);
+app.use("/payments", paymentRoutes);
 
 // ==========================================
 // 404 ROUTE
