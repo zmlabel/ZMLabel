@@ -1,0 +1,1306 @@
+<!-- ==========================================
+PRODUCT.HTML
+PART 1 (0 Se Start)
+Paste as New File
+========================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Details | ZM LABEL</title>
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="navbar.css">
+
+<link rel="stylesheet" href="product.css">
+
+</head>
+
+
+<body>
+<!-- ==========================
+TOP BAR
+========================== -->
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    <p>Free Shipping On Orders Above Rs.4999</p>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <!-- LEFT MOBILE ACTIONS -->
+    <div class="mobile-left-actions">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-label="Open Menu"
+        >
+            <i class="ri-menu-line"></i>
+        </button>
+
+        <a href="shop.html" class="mobile-search" aria-label="Search">
+            <i class="ri-search-line"></i>
+        </a>
+
+    </div>
+
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="index.html">
+            ZM LABEL
+        </a>
+    </div>
+
+
+    <!-- DESKTOP NAV -->
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+    Hoodies
+</a>
+            </li>
+
+            <li>
+                <a href="oversized-tees.html" class="active">
+    Oversized
+</a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- RIGHT ACTIONS -->
+    <div class="icons">
+
+        <!-- ACCOUNT -->
+        <a href="account.html" title="My Account">
+            <i class="ri-user-line"></i>
+        </a>
+
+
+        <!-- SEARCH - DESKTOP ONLY -->
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search"
+        >
+            <i class="ri-search-line"></i>
+        </a>
+
+
+        <!-- WISHLIST -->
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist"
+        >
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">0</span>
+
+        </a>
+
+
+        <!-- CART -->
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart"
+        >
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">0</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- MOBILE SIDEBAR -->
+
+<div id="overlay" class="overlay"></div>
+
+
+<aside id="sidebar" class="mobile-sidebar">
+
+    <div class="sidebar-header">
+
+        <span>ZM LABEL</span>
+
+        <button
+            id="closeMenu"
+            class="close-menu"
+            aria-label="Close Menu"
+        >
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="hoodies.html">
+            Hoodies & Shirts
+        </a>
+
+        <a href="oversized.html">
+            Oversized Tees
+        </a>
+
+        <a href="bottom.html">
+            Bottom
+        </a>
+
+        <a href="footwear.html">
+            Footwear
+        </a>
+
+        <a
+            href="sale.html"
+            class="sidebar-sale"
+        >
+            Sale
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="account.html">
+
+            <i class="ri-user-3-line"></i>
+
+            My Account
+
+        </a>
+
+
+        <a href="wishlist.html">
+
+            <i class="ri-heart-line"></i>
+
+            Wishlist
+
+        </a>
+
+
+        <a href="cart.html">
+
+            <i class="ri-shopping-bag-line"></i>
+
+            Cart
+
+        </a>
+
+    </div>
+
+</aside>
+
+<!-- NEXT PART = Breadcrumb + Product Section -->
+
+
+<!-- ==========================================
+PART 1 - PRODUCT.HTML
+Paste after Navbar
+========================================== -->
+
+<section class="product-page">
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+
+<span>/</span>
+
+<a href="shop.html">Shop</a>
+
+<span>/</span>
+
+<span id="breadcrumbName">
+
+Loading...
+
+</span>
+
+</div>
+
+<div class="product-wrapper">
+
+<!-- ==========================
+LEFT SIDE
+========================== -->
+
+<div class="product-gallery">
+
+<div class="thumbnail-gallery"
+
+id="thumbnailGallery">
+
+<!-- JS -->
+
+</div>
+
+<div class="main-image">
+
+<img
+
+id="mainProductImage"
+
+src=""
+
+alt="Product Image">
+
+</div>
+
+</div>
+
+<!-- ==========================
+RIGHT SIDE
+========================== -->
+
+<div class="product-info">
+
+<div id="productBadge"></div>
+
+<h1 id="productName">
+
+Loading...
+
+</h1>
+
+<div class="rating-row">
+
+★★★★★
+
+<span>
+
+(128 Reviews)
+
+</span>
+
+</div>
+
+<div class="price-row">
+
+<span
+
+id="productPrice"
+
+class="price">
+
+</span>
+
+<span
+
+id="oldPrice"
+
+class="old-price">
+
+</span>
+
+<span
+
+id="discountBadge"
+
+class="discount-badge">
+
+</span>
+
+</div>
+
+<div
+
+id="stockStatus"
+
+class="stock-status">
+
+</div>
+
+<p
+
+id="productDescription"
+
+class="product-description">
+
+</p>
+
+<!-- SIZE -->
+<!-- ==========================================
+SIZE
+========================================== -->
+
+<div class="option-box">
+
+<div class="option-header">
+
+<h3>
+
+Select Size
+
+</h3>
+
+<a href="#" class="size-guide">
+
+Size Guide
+
+</a>
+
+</div>
+
+<div
+id="sizesContainer"
+class="sizes">
+
+<!-- Backend Sizes Render Here -->
+
+</div>
+
+<p
+id="selectedSize"
+class="selected-option">
+
+Please Select A Size
+
+</p>
+
+</div>
+
+<!-- ==========================================
+COLOR
+========================================== -->
+
+<div class="option-box">
+
+<div class="option-header">
+
+<h3>
+
+Select Color
+
+</h3>
+
+</div>
+
+<div
+id="colorsContainer"
+class="colors">
+
+<!-- Backend Colors Render Here -->
+
+</div>
+
+<p
+id="selectedColor"
+class="selected-option">
+
+Please Select A Color
+
+</p>
+
+</div>
+
+<!-- ==========================================
+QUANTITY
+========================================== -->
+
+<div class="option-box">
+
+<h3>
+
+Quantity
+
+</h3>
+
+<div class="quantity-box">
+
+<button
+id="minusQty"
+type="button">
+
+<i class="ri-subtract-line"></i>
+
+</button>
+
+<input
+id="productQty"
+type="text"
+value="1"
+readonly>
+
+<button
+id="plusQty"
+type="button">
+
+<i class="ri-add-line"></i>
+
+</button>
+
+</div>
+
+<p class="quantity-note">
+
+Maximum quantity depends on available stock.
+
+</p>
+
+</div>
+
+<div class="action-buttons">
+
+<button
+
+id="addToCart"
+
+class="cart-btn">
+
+Add To Cart
+
+</button>
+
+<button
+
+id="buyNow"
+
+class="buy-btn">
+
+Buy Now
+
+</button>
+
+
+
+</div>
+<button
+class="whatsapp-btn"
+onclick="orderWhatsApp()">
+
+<i class="ri-whatsapp-line"></i>
+
+Order via WhatsApp
+
+</button>
+
+<div class="product-features">
+
+<div>
+
+<i class="ri-truck-line"></i>
+
+<span>Free Delivery All Pakistan</span>
+
+</div>
+
+<div>
+
+<i class="ri-shield-check-line"></i>
+
+<span>100% Secure Checkout</span>
+
+</div>
+
+<div>
+
+<i class="ri-refresh-line"></i>
+
+<span>Easy 7 Days Exchange</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEXT PART = PRODUCT TABS -->
+ <!-- ==========================================
+PART 2 - PRODUCT TABS
+Paste BELOW </section> of Product Page
+========================================== -->
+<!-- ==========================================
+SHIPPING & RETURNS
+========================================== -->
+
+<section class="product-tabs-section">
+
+    <div class="tabs">
+
+        <button
+            type="button"
+            class="tab-btn active"
+            data-tab="shipping">
+
+            Shipping
+
+        </button>
+
+
+        <button
+            type="button"
+            class="tab-btn"
+            data-tab="returns">
+
+            Returns
+
+        </button>
+
+    </div>
+
+
+    <!-- SHIPPING -->
+
+    <div
+        class="tab-content active"
+        id="shipping">
+
+        <h3>
+            Shipping Information
+        </h3>
+
+          <p>
+        Delivery Charges: Rs. 300 Advance Payment is required.
+    </p>
+
+        <p>
+            Free Shipping all over Pakistan on orders above Rs.5000.
+        </p>
+
+        <p>
+            Orders are dispatched within 24 Hours.
+        </p>
+
+        <p>
+            Delivery Time: 2–5 Working Days.
+        </p>
+
+    </div>
+
+
+    <!-- RETURNS -->
+
+    <div
+        class="tab-content"
+        id="returns">
+
+        <h3>
+            Returns & Exchange
+        </h3>
+
+        <p>
+            7 Days Easy Return & Exchange.
+        </p>
+
+        <p>
+            Product must be unused with original tags and packaging.
+        </p>
+
+        <p>
+            Refunds are processed after product inspection.
+        </p>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     ZM LABEL — CUSTOMER REVIEWS
+     Paste ABOVE Related Products Section
+========================================================= -->
+
+<section class="product-reviews" id="productReviews">
+
+    <div class="reviews-container">
+
+        <!-- REVIEWS HEADER -->
+        <div class="reviews-header">
+
+            <div class="reviews-heading">
+
+                <span class="reviews-eyebrow">
+                    CUSTOMER FEEDBACK
+                </span>
+
+                <h2>
+                    Customer Reviews
+                </h2>
+
+                <p>
+                    Real feedback from our customers.
+                </p>
+
+            </div>
+
+
+            <!-- OVERALL RATING -->
+            <div class="overall-rating">
+
+                <strong id="averageRating">
+                    0.0
+                </strong>
+
+                <div
+                    class="rating-stars"
+                    id="averageStars"
+                    aria-label="Average rating">
+
+                    ☆☆☆☆☆
+
+                </div>
+
+                <span id="reviewCount">
+                    0 Reviews
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RATING BREAKDOWN -->
+        <div class="rating-breakdown">
+
+            <!-- 5 STAR -->
+            <div class="rating-breakdown-row">
+
+                <span>5</span>
+
+                <i class="ri-star-fill"></i>
+
+                <div class="rating-bar">
+
+                    <div
+                        id="rating5Bar"
+                        class="rating-bar-fill">
+                    </div>
+
+                </div>
+
+                <span id="rating5Count">0</span>
+
+            </div>
+
+
+            <!-- 4 STAR -->
+            <div class="rating-breakdown-row">
+
+                <span>4</span>
+
+                <i class="ri-star-fill"></i>
+
+                <div class="rating-bar">
+
+                    <div
+                        id="rating4Bar"
+                        class="rating-bar-fill">
+                    </div>
+
+                </div>
+
+                <span id="rating4Count">0</span>
+
+            </div>
+
+
+            <!-- 3 STAR -->
+            <div class="rating-breakdown-row">
+
+                <span>3</span>
+
+                <i class="ri-star-fill"></i>
+
+                <div class="rating-bar">
+
+                    <div
+                        id="rating3Bar"
+                        class="rating-bar-fill">
+                    </div>
+
+                </div>
+
+                <span id="rating3Count">0</span>
+
+            </div>
+
+
+            <!-- 2 STAR -->
+            <div class="rating-breakdown-row">
+
+                <span>2</span>
+
+                <i class="ri-star-fill"></i>
+
+                <div class="rating-bar">
+
+                    <div
+                        id="rating2Bar"
+                        class="rating-bar-fill">
+                    </div>
+
+                </div>
+
+                <span id="rating2Count">0</span>
+
+            </div>
+
+
+            <!-- 1 STAR -->
+            <div class="rating-breakdown-row">
+
+                <span>1</span>
+
+                <i class="ri-star-fill"></i>
+
+                <div class="rating-bar">
+
+                    <div
+                        id="rating1Bar"
+                        class="rating-bar-fill">
+                    </div>
+
+                </div>
+
+                <span id="rating1Count">0</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- WRITE REVIEW -->
+        <div class="review-action">
+
+            <div>
+
+                <h3>
+                    Share Your Experience
+                </h3>
+
+                <p>
+                    Purchased this product? Tell other customers what you think.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                id="writeReviewBtn"
+                class="write-review-btn">
+
+                <i class="ri-edit-line"></i>
+
+                Write a Review
+
+            </button>
+
+        </div>
+
+
+        <!-- REVIEW FORM -->
+        <div
+            id="reviewFormWrapper"
+            class="review-form-wrapper"
+            hidden>
+
+            <form
+                id="reviewForm"
+                class="review-form"
+                enctype="multipart/form-data">
+
+                <div class="review-form-top">
+
+                    <div>
+
+                        <span>
+                            YOUR FEEDBACK
+                        </span>
+
+                        <h3>
+                            Write a Review
+                        </h3>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="closeReviewForm"
+                        class="close-review-form"
+                        aria-label="Close">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- NAME -->
+                <div class="review-field">
+
+                    <label for="reviewName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="reviewName"
+                        name="name"
+                        maxlength="100"
+                        placeholder="Enter your name">
+
+                </div>
+
+
+                <!-- RATING -->
+                <div class="review-field">
+
+                    <label>
+                        Rating
+                    </label>
+
+                    <div
+                        id="reviewStarSelector"
+                        class="review-star-selector">
+
+                        <button
+                            type="button"
+                            class="review-star"
+                            data-rating="1">
+
+                            <i class="ri-star-fill"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="review-star"
+                            data-rating="2">
+
+                            <i class="ri-star-fill"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="review-star"
+                            data-rating="3">
+
+                            <i class="ri-star-fill"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="review-star"
+                            data-rating="4">
+
+                            <i class="ri-star-fill"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="review-star"
+                            data-rating="5">
+
+                            <i class="ri-star-fill"></i>
+
+                        </button>
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        id="reviewRating"
+                        name="rating">
+
+                </div>
+
+
+                <!-- COMMENT -->
+                <div class="review-field">
+
+                    <label for="reviewComment">
+                        Your Review
+                    </label>
+
+                    <textarea
+                        id="reviewComment"
+                        name="comment"
+                        rows="5"
+                        maxlength="3000"
+                        placeholder="Tell us about your experience..."
+                        required></textarea>
+
+                    <div class="review-character-count">
+
+                        <span id="reviewCharCount">
+                            0
+                        </span>
+
+                        / 3000
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGES -->
+                <div class="review-field">
+
+                    <label for="reviewImages">
+                        Add Photos
+                        <span>(Optional)</span>
+                    </label>
+
+                    <input
+                        type="file"
+                        id="reviewImages"
+                        name="images"
+                        accept="image/jpeg,image/png,image/webp"
+                        multiple>
+
+                    <small>
+                        You can upload up to 5 images.
+                    </small>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <div class="review-submit">
+
+                    <button
+                        type="submit"
+                        id="submitReviewBtn"
+                        class="submit-review-btn">
+
+                        <i class="ri-send-plane-line"></i>
+
+                        Submit Review
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- REVIEWS TOOLBAR -->
+        <div class="reviews-toolbar">
+
+            <div>
+
+                <h3>
+                    Customer Reviews
+                </h3>
+
+                <span id="reviewsCountLabel">
+                    0 reviews
+                </span>
+
+            </div>
+
+            <select
+                id="reviewSort"
+                aria-label="Sort reviews">
+
+                <option value="newest">
+                    Newest
+                </option>
+
+                <option value="highest">
+                    Highest Rated
+                </option>
+
+                <option value="lowest">
+                    Lowest Rated
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- REVIEWS LIST -->
+        <div
+            id="reviewsList"
+            class="reviews-list">
+
+            <!-- Reviews loaded from backend -->
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+        <div
+            id="reviewsEmpty"
+            class="reviews-empty"
+            hidden>
+
+            <i class="ri-chat-quote-line"></i>
+
+            <h3>
+                No Reviews Yet
+            </h3>
+
+            <p>
+                Be the first customer to share your experience.
+            </p>
+
+            <button
+                type="button"
+                id="writeFirstReviewBtn">
+
+                Write the First Review
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+RELATED PRODUCTS
+========================================== -->
+
+<section class="related-products">
+
+<div class="section-heading">
+
+<span>YOU MAY ALSO LIKE</span>
+
+<h2>Related Products</h2>
+
+</div>
+
+<div
+
+id="relatedProducts"
+
+class="related-grid">
+
+<!-- JS -->
+ 
+
+</div>
+
+</section>
+<!-- ==========================================
+NEWSLETTER
+Paste BELOW Related Products Section
+========================================== -->
+
+<section class="newsletter">
+
+<div class="newsletter-content">
+
+<span>JOIN ZM LABEL</span>
+
+<h2>
+
+Get 10% OFF On Your First Order
+
+</h2>
+
+<p>
+
+Subscribe to receive new arrivals, exclusive drops and member-only offers.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email address"
+required>
+
+<button type="submit">
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+
+<h2>
+
+ZM LABEL
+
+</h2>
+
+<p>
+
+Premium Streetwear designed for modern everyday wear.
+
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>
+
+Shop
+
+</h3>
+
+<a href="shop.html">All Products</a>
+
+<a href="new.html">New Arrivals</a>
+
+<a href="sale.html">Sale</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="footer-col">
+
+<h3>
+
+Customer Care
+
+</h3>
+
+<a href="#">Shipping Policy</a>
+
+<a href="#">Return Policy</a>
+
+<a href="#">Privacy Policy</a>
+
+<a href="#">Terms & Conditions</a>
+
+</div>
+
+<div class="footer-col">
+
+<h3>
+
+Follow Us
+
+</h3>
+
+<a href="#">Instagram</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">YouTube</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 ZM LABEL. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- ==========================================
+SCRIPTS
+========================================== -->
+<script src="/navbar.js"></script>
+<script src="main.js"></script>
+<script src="auth.js"></script>
+<script src="cart.js"></script>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="product.js"></script>
+<script src="reviews.js"></script>
+</body>
+
+</html>
+

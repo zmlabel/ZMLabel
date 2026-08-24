@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ZM LABEL | Admin Orders
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 40px;
+
+            background: #f5f5f5;
+
+            color: #111;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+        }
+
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .header h1 {
+
+            margin: 0;
+
+            font-size: 30px;
+
+        }
+
+
+        .header p {
+
+            margin: 8px 0 0;
+
+            color: #777;
+
+        }
+
+
+        .refresh-btn {
+
+            border: 0;
+
+            background: #111;
+
+            color: #fff;
+
+            padding: 12px 20px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+        }
+
+
+        .table-card {
+
+            background: #fff;
+
+            border-radius: 12px;
+
+            overflow-x: auto;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.06);
+
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 850px;
+
+        }
+
+
+        th {
+
+            background: #111;
+
+            color: #fff;
+
+            padding: 16px;
+
+            text-align: left;
+
+            font-size: 13px;
+
+            letter-spacing: .5px;
+
+        }
+
+
+        td {
+
+            padding: 16px;
+
+            border-bottom: 1px solid #eee;
+
+            vertical-align: middle;
+
+        }
+
+
+        tr:last-child td {
+
+            border-bottom: 0;
+
+        }
+
+
+        .order-id {
+
+            font-weight: 700;
+
+        }
+
+
+        .customer-name {
+
+            font-weight: 600;
+
+        }
+
+
+        .customer-email {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+        .status {
+
+            display: inline-block;
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+
+
+        .status.processing {
+
+            background: #fff4d6;
+
+            color: #9a6b00;
+
+        }
+
+
+        .status.shipped {
+
+            background: #e7f1ff;
+
+            color: #1769aa;
+
+        }
+
+
+        .status.delivered {
+
+            background: #e4f7eb;
+
+            color: #187a3d;
+
+        }
+
+
+        .action-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .tracking-input {
+
+            width: 150px;
+
+            padding: 10px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 5px;
+
+            outline: none;
+
+        }
+
+
+        .tracking-input:focus {
+
+            border-color: #111;
+
+        }
+
+
+        .action-btn {
+
+            border: 0;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            background: #111;
+
+            color: #fff;
+
+            font-weight: 600;
+
+        }
+
+
+        .action-btn:disabled {
+
+            opacity: .6;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .empty {
+
+            text-align: center;
+
+            padding: 50px;
+
+            color: #777;
+
+        }
+
+
+        .error {
+
+            margin-bottom: 20px;
+
+            padding: 14px 18px;
+
+            background: #ffe7e7;
+
+            color: #a00000;
+
+            border-radius: 6px;
+
+            display: none;
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            body {
+
+                padding: 20px;
+
+            }
+
+
+            .header {
+
+                align-items: flex-start;
+
+                gap: 20px;
+
+                flex-direction: column;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <div class="header">
+
+        <div>
+
+            <h1>
+                Orders
+            </h1>
+
+            <p>
+                ZM LABEL Order Management
+            </p>
+
+        </div>
+
+
+        <button
+            class="refresh-btn"
+            id="refreshBtn"
+        >
+            Refresh
+        </button>
+
+    </div>
+
+
+    <div
+        class="error"
+        id="errorMessage"
+    ></div>
+
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        ORDER ID
+                    </th>
+
+                    <th>
+                        CUSTOMER
+                    </th>
+
+                    <th>
+                        TOTAL
+                    </th>
+
+                    <th>
+                        STATUS
+                    </th>
+
+                    <th>
+                        ACTION
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody
+                id="ordersBody"
+            >
+
+                <tr>
+
+                    <td
+                        colspan="5"
+                        class="empty"
+                    >
+                        Loading orders...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+// ======================================================
+// API
+// ======================================================
+
+const API_BASE =
+    "http://localhost:5000/api/admin";
+
+
+// ======================================================
+// ELEMENTS
+// ======================================================
+
+const ordersBody =
+    document.getElementById(
+        "ordersBody"
+    );
+
+const errorMessage =
+    document.getElementById(
+        "errorMessage"
+    );
+
+const refreshBtn =
+    document.getElementById(
+        "refreshBtn"
+    );
+
+
+// ======================================================
+// GET AUTH TOKEN
+// ======================================================
+
+function getToken() {
+
+    return (
+        localStorage.getItem("token") ||
+        localStorage.getItem("authToken") ||
+        localStorage.getItem("adminToken") ||
+        ""
+    );
+
+}
+
+
+// ======================================================
+// API HEADERS
+// ======================================================
+
+function getHeaders() {
+
+    const token =
+        getToken();
+
+    const headers = {
+
+        "Content-Type":
+            "application/json"
+
+    };
+
+
+    if (token) {
+
+        headers.Authorization =
+            `Bearer ${token}`;
+
+    }
+
+
+    return headers;
+
+}
+
+
+// ======================================================
+// SHOW ERROR
+// ======================================================
+
+function showError(message) {
+
+    errorMessage.textContent =
+        message;
+
+    errorMessage.style.display =
+        "block";
+
+}
+
+
+// ======================================================
+// CLEAR ERROR
+// ======================================================
+
+function clearError() {
+
+    errorMessage.textContent =
+        "";
+
+    errorMessage.style.display =
+        "none";
+
+}
+
+
+// ======================================================
+// FORMAT PRICE
+// ======================================================
+
+function formatPrice(value) {
+
+    const number =
+        Number(value || 0);
+
+    return (
+        "Rs. " +
+        number.toLocaleString()
+    );
+
+}
+
+
+// ======================================================
+// ESCAPE HTML
+// ======================================================
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+// ======================================================
+// STATUS CLASS
+// ======================================================
+
+function statusClass(status) {
+
+    return String(status || "")
+        .toLowerCase()
+        .replace(/\s+/g, "-");
+
+}
+
+
+// ======================================================
+// LOAD ORDERS
+// ======================================================
+
+async function loadOrders() {
+
+    clearError();
+
+    ordersBody.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="5"
+                class="empty"
+            >
+                Loading orders...
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE}/orders`,
+                {
+                    method: "GET",
+                    headers: getHeaders()
+                }
+            );
+
+
+        if (!response.ok) {
+
+            const data =
+                await response
+                    .json()
+                    .catch(() => ({}));
+
+            throw new Error(
+                data.message ||
+                `Failed to load orders (${response.status})`
+            );
+
+        }
+
+
+        const orders =
+            await response.json();
+
+
+        renderOrders(
+            Array.isArray(orders)
+                ? orders
+                : []
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "LOAD ORDERS ERROR:",
+            error
+        );
+
+
+        showError(
+            error.message ||
+            "Failed to load orders."
+        );
+
+
+        ordersBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="empty"
+                >
+                    Unable to load orders.
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+// ======================================================
+// RENDER ORDERS
+// ======================================================
+
+function renderOrders(orders) {
+
+    if (!orders.length) {
+
+        ordersBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="5"
+                    class="empty"
+                >
+                    No orders found.
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    ordersBody.innerHTML =
+        orders.map(order => {
+
+            const orderId =
+                order.orderId ||
+                order._id ||
+                "N/A";
+
+
+            const customer =
+                order.customer || {};
+
+
+            const customerName =
+                customer.name ||
+                "Customer";
+
+
+            const customerEmail =
+                customer.email ||
+                "";
+
+
+            const total =
+                order.total || 0;
+
+
+            const status =
+                order.status ||
+                "Processing";
+
+
+            let actionHtml = "";
+
+
+            // ------------------------------------------------
+            // PROCESSING
+            // ------------------------------------------------
+
+            if (status === "Processing") {
+
+                actionHtml = `
+
+                    <div class="action-area">
+
+                        <input
+                            type="text"
+                            class="tracking-input"
+                            id="tracking-${escapeHtml(order._id)}"
+                            placeholder="Tracking No."
+                        >
+
+                        <button
+                            class="action-btn"
+                            data-action="ship"
+                            data-id="${escapeHtml(order._id)}"
+                        >
+                            Mark Shipped
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            // ------------------------------------------------
+            // SHIPPED
+            // ------------------------------------------------
+
+            else if (status === "Shipped") {
+
+                actionHtml = `
+
+                    <div class="action-area">
+
+                        <button
+                            class="action-btn"
+                            data-action="deliver"
+                            data-id="${escapeHtml(order._id)}"
+                        >
+                            Mark Delivered
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            // ------------------------------------------------
+            // DELIVERED
+            // ------------------------------------------------
+
+            else {
+
+                actionHtml = `
+
+                    <span
+                        style="
+                            color:#187a3d;
+                            font-weight:600;
+                        "
+                    >
+                        Completed
+                    </span>
+
+                `;
+
+            }
+
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <span class="order-id">
+                            #${escapeHtml(orderId)}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="customer-name">
+                            ${escapeHtml(customerName)}
+                        </span>
+
+                        <span class="customer-email">
+                            ${escapeHtml(customerEmail)}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <strong>
+                            ${formatPrice(total)}
+                        </strong>
+
+                    </td>
+
+
+                    <td>
+
+                        <span
+                            class="
+                                status
+                                ${statusClass(status)}
+                            "
+                        >
+                            ${escapeHtml(status)}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        ${actionHtml}
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }).join("");
+
+}
+
+
+// ======================================================
+// UPDATE ORDER STATUS
+// ======================================================
+
+async function updateOrderStatus(
+    orderId,
+    status,
+    trackingNumber = ""
+) {
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE}/orders/${encodeURIComponent(orderId)}/status`,
+                {
+                    method: "PUT",
+
+                    headers: getHeaders(),
+
+                    body: JSON.stringify({
+
+                        status,
+
+                        trackingNumber
+
+                    })
+
+                }
+            );
+
+
+        const data =
+            await response
+                .json()
+                .catch(() => ({}));
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                `Failed to update order (${response.status})`
+            );
+
+        }
+
+
+        await loadOrders();
+
+
+    } catch (error) {
+
+        console.error(
+            "UPDATE ORDER ERROR:",
+            error
+        );
+
+
+        showError(
+            error.message ||
+            "Failed to update order."
+        );
+
+    }
+
+}
+
+
+// ======================================================
+// BUTTON EVENTS
+// ======================================================
+
+ordersBody.addEventListener(
+    "click",
+    async function(event) {
+
+        const button =
+            event.target.closest(
+                "[data-action]"
+            );
+
+
+        if (!button) {
+            return;
+        }
+
+
+        const action =
+            button.dataset.action;
+
+        const orderId =
+            button.dataset.id;
+
+
+        if (!orderId) {
+            return;
+        }
+
+
+        // ------------------------------------------------
+        // MARK SHIPPED
+        // ------------------------------------------------
+
+        if (action === "ship") {
+
+            const input =
+                document.getElementById(
+                    `tracking-${orderId}`
+                );
+
+
+            const trackingNumber =
+                input
+                    ? input.value.trim()
+                    : "";
+
+
+            if (!trackingNumber) {
+
+                alert(
+                    "Please enter tracking number."
+                );
+
+                return;
+
+            }
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Updating...";
+
+
+            await updateOrderStatus(
+                orderId,
+                "Shipped",
+                trackingNumber
+            );
+
+        }
+
+
+        // ------------------------------------------------
+        // MARK DELIVERED
+        // ------------------------------------------------
+
+        if (action === "deliver") {
+
+            const confirmed =
+                confirm(
+                    "Mark this order as Delivered?"
+                );
+
+
+            if (!confirmed) {
+                return;
+            }
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Updating...";
+
+
+            await updateOrderStatus(
+                orderId,
+                "Delivered"
+            );
+
+        }
+
+    }
+);
+
+
+// ======================================================
+// REFRESH
+// ======================================================
+
+refreshBtn.addEventListener(
+    "click",
+    loadOrders
+);
+
+
+// ======================================================
+// INITIAL LOAD
+// ======================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadOrders
+);
+
+</script>
+<script src="config.js"></script>
+
+</body>
+
+</html>

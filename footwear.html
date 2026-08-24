@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+FOOTWEAR | ZM LABEL
+</title>
+
+<link rel="icon"
+href="favicon.ico">
+
+<link rel="stylesheet"
+href="footwear.css">
+<link rel="stylesheet" href="navbar.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+</head>
+
+
+
+<body>
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    <p>Free Shipping On Orders Above Rs.4999</p>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <!-- LEFT MOBILE ACTIONS -->
+    <div class="mobile-left-actions">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-label="Open Menu"
+        >
+            <i class="ri-menu-line"></i>
+        </button>
+
+        <a href="shop.html" class="mobile-search" aria-label="Search">
+            <i class="ri-search-line"></i>
+        </a>
+
+    </div>
+
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="index.html">
+            ZM LABEL
+        </a>
+    </div>
+
+
+    <!-- DESKTOP NAV -->
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+    Hoodies
+</a>
+            </li>
+
+            <li>
+                <a href="oversized-tees.html">
+    Oversized
+</a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html" class="active">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- RIGHT ACTIONS -->
+    <div class="icons">
+
+        <!-- ACCOUNT -->
+        <a href="account.html" title="My Account">
+            <i class="ri-user-line"></i>
+        </a>
+
+
+        <!-- SEARCH - DESKTOP ONLY -->
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search"
+        >
+            <i class="ri-search-line"></i>
+        </a>
+
+
+        <!-- WISHLIST -->
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist"
+        >
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">0</span>
+
+        </a>
+
+
+        <!-- CART -->
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart"
+        >
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">0</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- MOBILE SIDEBAR -->
+
+<div id="overlay" class="overlay"></div>
+
+
+<aside id="sidebar" class="mobile-sidebar">
+
+    <div class="sidebar-header">
+
+        <span>ZM LABEL</span>
+
+        <button
+            id="closeMenu"
+            class="close-menu"
+            aria-label="Close Menu"
+        >
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="hoodies.html">
+            Hoodies & Shirts
+        </a>
+
+        <a href="oversized-tees.html">
+            Oversized Tees
+        </a>
+
+        <a href="bottom.html">
+            Bottom
+        </a>
+
+        <a href="footwear.html">
+            Footwear
+        </a>
+
+        <a
+            href="sale.html"
+            class="sidebar-sale"
+        >
+            Sale
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="account.html">
+
+            <i class="ri-user-3-line"></i>
+
+            My Account
+
+        </a>
+
+
+        <a href="wishlist.html">
+
+            <i class="ri-heart-line"></i>
+
+            Wishlist
+
+        </a>
+
+
+        <a href="cart.html">
+
+            <i class="ri-shopping-bag-line"></i>
+
+            Cart
+
+        </a>
+
+    </div>
+
+</aside>
+<!-- ===========================
+HERO
+=========================== -->
+
+<section class="shop-hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<span class="hero-subtitle">
+
+NEW COLLECTION
+
+</span>
+
+<h1>
+
+BOTTOM COLLECTION
+
+</h1>
+
+<p>
+
+Premium quality Bottom wear designed for everyday comfort and modern streetwear.
+
+</p>
+
+<a href="#productsSection" class="hero-btn">
+
+Shop Collection
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ===========================
+SHOP HEADER
+=========================== -->
+
+<section class="shop-wrapper">
+
+<div class="shop-header">
+
+<div class="left">
+
+<h2>
+
+BOTTOM Collection
+
+</h2>
+
+<p id="productCount">
+
+0 Products
+
+</p>
+
+</div>
+
+<div class="right">
+
+<button
+id="filterBtn"
+class="filter-btn">
+
+<i class="ri-equalizer-line"></i>
+
+Filter
+
+</button>
+
+<select id="sortProducts">
+
+<option value="">
+
+Sort By
+
+</option>
+
+<option value="newest">
+
+Newest
+
+</option>
+
+<option value="priceLow">
+
+Price : Low → High
+
+</option>
+
+<option value="priceHigh">
+
+Price : High → Low
+
+</option>
+
+<option value="nameAZ">
+
+Name A → Z
+
+</option>
+
+<option value="nameZA">
+
+Name Z → A
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+<!-- ===========================
+PRODUCT GRID
+=========================== -->
+
+<div class="products-section"
+id="productsSection">
+
+<div
+id="productsContainer"
+class="products-grid">
+
+<!-- Products Backend Se Ayenge -->
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+FILTER SIDEBAR
+=========================== -->
+
+<div
+class="filter-overlay"
+id="filterOverlay">
+
+</div>
+
+<aside
+class="filter-sidebar"
+id="filterSidebar">
+
+<div class="filter-header">
+
+<h3>
+
+Filters
+
+</h3>
+
+<button
+id="closeFilter">
+
+<i class="ri-close-line"></i>
+
+</button>
+
+</div>
+
+<!-- Category -->
+<div class="filter-box">
+
+    <h4>
+        Category
+    </h4>
+
+    <label>
+        <input
+            type="radio"
+            name="subCategory"
+            value="Sneakers">
+
+        Sneakers
+    </label>
+
+    <label>
+        <input
+            type="radio"
+            name="subCategory"
+            value="Casual Shoes">
+
+        Casual Shoes
+    </label>
+
+    <label>
+        <input
+            type="radio"
+            name="subCategory"
+            value="Slides">
+
+        Slides
+    </label>
+
+</div>
+<!-- Price -->
+
+<div class="filter-box">
+
+<h4>
+
+Price
+
+</h4>
+
+<label>
+
+<input
+type="radio"
+name="price"
+value="0-3000">
+
+Below Rs.3000
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="price"
+value="3000-5000">
+
+Rs.3000 - Rs.5000
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="price"
+value="5000+">
+
+Above Rs.5000
+
+</label>
+
+</div>
+
+<div class="filter-footer">
+
+<button
+id="applyFilter"
+class="apply-btn">
+
+Apply Filters
+
+</button>
+
+</div>
+
+</aside>
+<div id="toast" class="toast"></div>
+
+
+<!-- =====================================================
+JAVASCRIPT
+===================================================== -->
+<script src="config.js"></script>
+<script src="/navbar.js"></script>
+<script src="main.js"></script>
+<script src="auth.js"></script>
+<script src="cart.js"></script>
+<script src="footwear.js"></script>
+
+
+</body>
+
+</html>

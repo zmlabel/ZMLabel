@@ -188,22 +188,7 @@ app.use((err, req, res, next) => {
 
 const PORT =
     process.env.PORT || 5000;
-
-app.listen(
-    PORT,
-    () => {
-
-        console.log(
-            "================================="
-        );
-
-        console.log(
-            "🚀 ZM LABEL BACKEND"
-        );
-
-        console.log(
-            `✅ Server Running On Port ${PORT}`
-        );
+module.exports = app
 
         console.log(
             process.env.OPENAI_API_KEY
@@ -221,5 +206,4 @@ app.listen(
             "================================="
         );
 
-    }
-);
+    

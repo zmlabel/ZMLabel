@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | ZM LABEL</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="favicon.ico"
+    >
+
+    <link
+        rel="stylesheet"
+        href="checkout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="navbar.css"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="top-bar">
+
+    Free Shipping On Orders Above Rs.4999
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="mobile-left-actions">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            type="button"
+            aria-label="Open Menu"
+        >
+
+            <i class="ri-menu-line"></i>
+
+        </button>
+
+
+        <a
+            href="shop.html"
+            class="mobile-search"
+            aria-label="Search"
+        >
+
+            <i class="ri-search-line"></i>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <a href="index.html">
+            ZM LABEL
+        </a>
+
+    </div>
+
+
+
+    <!-- DESKTOP NAV -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html">
+                    Shop
+                </a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+                    Hoodies
+                </a>
+            </li>
+
+            <li>
+                <a href="oversized-tees.html">
+                    Oversized
+                </a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- RIGHT ACTIONS -->
+
+    <div class="icons">
+
+        <a
+            href="account.html"
+            title="My Account"
+        >
+
+            <i class="ri-user-line"></i>
+
+        </a>
+
+
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search"
+        >
+
+            <i class="ri-search-line"></i>
+
+        </a>
+
+
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist"
+        >
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">
+                0
+            </span>
+
+        </a>
+
+
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart"
+        >
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CHECKOUT
+========================================================= -->
+
+<main class="checkout-wrapper">
+
+
+    <!-- HEADING -->
+
+    <div class="checkout-heading">
+
+        <span>
+            ZM LABEL
+        </span>
+
+        <h1>
+            Checkout
+        </h1>
+
+        <p>
+            Complete your details to place your order.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CHECKOUT LAYOUT
+    ===================================================== -->
+
+    <div class="checkout-layout">
+
+
+        <!-- =================================================
+             LEFT
+        ================================================= -->
+
+        <section class="checkout-card">
+
+
+            <!-- DELIVERY -->
+
+            <div class="section-title">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        Delivery Information
+                    </h2>
+
+                    <p>
+                        Where should we deliver your order?
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form
+                id="checkoutForm"
+                class="checkout-form"
+            >
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE + CITY -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="03XXXXXXXXX"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="Your city"
+                            autocomplete="address-level2"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Complete Delivery Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        placeholder="House number, street, area..."
+                        autocomplete="street-address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PAYMENT METHOD
+                     ONLY PAYMENT METHOD SECTION
+                ================================================= -->
+
+                <div class="section-title payment-title">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Payment Method
+                        </h2>
+
+                        <p>
+                            Select your preferred payment method.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PAYMENT OPTIONS -->
+
+                <div class="payment-options">
+
+
+                    <!-- COD -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="COD"
+                            checked
+                        >
+
+                        <div class="payment-content">
+
+                            <i class="ri-hand-coin-line"></i>
+
+                            <div>
+
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <small>
+                                    Pay when your order arrives
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <i class="ri-check-line payment-check"></i>
+
+                    </label>
+
+
+
+                    <!-- EASYPAISA -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Easypaisa"
+                        >
+
+                        <div class="payment-content">
+
+                            <i class="ri-smartphone-line"></i>
+
+                            <div>
+
+                                <strong>
+                                    Easypaisa
+                                </strong>
+
+                                <small>
+                                    Pay securely online
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <i class="ri-check-line payment-check"></i>
+
+                    </label>
+
+
+
+                    <!-- JAZZCASH -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="JazzCash"
+                        >
+
+                        <div class="payment-content">
+
+                            <i class="ri-wallet-3-line"></i>
+
+                            <div>
+
+                                <strong>
+                                    JazzCash
+                                </strong>
+
+                                <small>
+                                    Pay securely online
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <i class="ri-check-line payment-check"></i>
+
+                    </label>
+
+
+
+                    <!-- CARD -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Credit Card"
+                        >
+
+                        <div class="payment-content">
+
+                            <i class="ri-bank-card-line"></i>
+
+                            <div>
+
+                                <strong>
+                                    Credit / Debit Card
+                                </strong>
+
+                                <small>
+                                    Secure online payment
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <i class="ri-check-line payment-check"></i>
+
+                    </label>
+
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT
+        ================================================= -->
+
+        <aside class="order-summary">
+
+
+            <!-- SUMMARY HEADER -->
+
+            <div class="summary-header">
+
+                <div>
+
+                    <span>
+                        03
+                    </span>
+
+                    <h2>
+                        Your Order
+                    </h2>
+
+                </div>
+
+                <span id="itemCount">
+                    0 Items
+                </span>
+
+            </div>
+
+
+
+            <!-- PRODUCTS -->
+
+            <div
+                id="checkoutItems"
+                class="checkout-items"
+            >
+
+                <div class="checkout-loading">
+
+                    Loading your order...
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SUMMARY -->
+
+            <div class="summary-lines">
+
+
+                <!-- SUBTOTAL -->
+
+                <div>
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="subtotal">
+                        Rs. 0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SHIPPING -->
+
+                <div>
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong id="deliveryCharge">
+                        Rs. 300
+                    </strong>
+
+                </div>
+
+
+
+                <!-- COUPON -->
+
+                <div
+                    id="couponDiscountRow"
+                    class="discount-row"
+                    style="display:none;"
+                >
+
+                    <span>
+                        Coupon Discount
+                    </span>
+
+                    <strong id="couponDiscount">
+                        - Rs. 0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COUPON
+            ================================================= -->
+
+            <div class="coupon-section">
+
+
+                <div class="coupon-heading">
+
+                    <div>
+
+                        <strong>
+                            Have a coupon?
+                        </strong>
+
+                        <span>
+                            Apply your discount code
+                        </span>
+
+                    </div>
+
+                    <i class="ri-coupon-3-line"></i>
+
+                </div>
+
+
+
+                <div class="coupon-input-row">
+
+                    <input
+                        type="text"
+                        id="couponCode"
+                        placeholder="Enter coupon code"
+                        autocomplete="off"
+                        maxlength="30"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="applyCouponBtn"
+                    >
+                        Apply
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="removeCouponBtn"
+                        style="display:none;"
+                        aria-label="Remove coupon"
+                    >
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="couponMessage"
+                    class="coupon-message"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DELIVERY ADVANCE
+                 
+                 IMPORTANT:
+                 PAYMENT METHOD IS NOT HERE.
+                 IT IS ALREADY ABOVE.
+            ================================================= -->
+
+            <div class="delivery-advance-note">
+
+                <div class="delivery-advance-icon">
+
+                    <i class="ri-information-line"></i>
+
+                </div>
+
+
+                <div class="delivery-advance-content">
+
+                    <strong>
+                        Rs. 300 Delivery Charge
+                    </strong>
+
+                    <p>
+                        A Rs. 300 delivery charge is included
+                        in your order total.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="total">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+
+            <!-- PLACE ORDER -->
+
+            <button
+                type="button"
+                id="placeOrderBtn"
+                class="place-order"
+            >
+
+                <span>
+                    Place Order
+                </span>
+
+                <i class="ri-arrow-right-line"></i>
+
+            </button>
+
+
+
+            <!-- SECURE -->
+
+            <p class="secure-note">
+
+                <i class="ri-shield-check-line"></i>
+
+                Your order information is securely
+                processed.
+
+            </p>
+
+
+        </aside>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="checkoutToast"
+    class="checkout-toast"
+></div>
+
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="config.js"></script>
+
+<script src="/navbar.js"></script>
+
+<script src="cart.js"></script>
+
+<script src="wishlist.js"></script>
+
+<script src="checkout.js"></script>
+
+
+</body>
+
+</html>

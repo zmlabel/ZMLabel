@@ -1,0 +1,1603 @@
+/* ==========================================
+ZM LABEL
+HOODIES PAGE
+========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#f7f7f7;
+color:#111;
+overflow-x:hidden;
+
+}
+
+a{
+
+text-decoration:none;
+color:inherit;
+
+}
+
+img{
+
+display:block;
+max-width:100%;
+
+}
+
+/* ==========================
+VARIABLES
+========================== */
+
+:root{
+
+--black:#111111;
+
+--white:#ffffff;
+
+--gray:#777777;
+
+--light:#f7f7f7;
+
+--border:#ececec;
+
+--primary:#111111;
+
+--shadow:0 10px 30px rgba(0,0,0,.08);
+
+--radius:16px;
+
+}
+
+/* ==========================================
+TOP BAR
+========================================== */
+
+.top-bar{
+
+height:42px;
+background:#111;
+color:#fff;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:14px;
+letter-spacing:.5px;
+
+}
+/*==================
+HERO
+========================== */
+
+.shop-hero{
+
+height:420px;
+
+background:url("images/men-banner.jpeg") center/cover no-repeat;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+padding:0 8%;
+
+}
+
+.shop-hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(1px);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:520px;
+
+}
+
+.hero-subtitle{
+
+font-size:14px;
+
+letter-spacing:3px;
+
+font-weight:700;
+
+color:#444;
+
+}
+
+.hero-content h1{
+
+font-size:58px;
+
+margin:15px 0;
+
+font-weight:800;
+
+line-height:1.1;
+
+}
+
+.hero-content p{
+
+font-size:17px;
+
+color:#444;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+
+.hero-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:180px;
+
+height:55px;
+
+background:#111;
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:600;
+
+border-radius:50px;
+
+transition:.35s;
+
+}
+
+.hero-btn:hover{
+
+background:#333;
+
+transform:translateY(-4px);
+
+}
+/* ==========================================
+SHOP HEADER
+========================================== */
+
+.shop-wrapper{
+
+max-width:1450px;
+
+margin:70px auto;
+
+padding:0 40px;
+
+}
+
+.shop-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:45px;
+
+gap:20px;
+
+}
+
+.shop-header .left h2{
+
+font-size:38px;
+
+font-weight:800;
+
+color:#111;
+
+margin-bottom:8px;
+
+}
+
+.shop-header .left p{
+
+font-size:15px;
+
+color:#777;
+
+}
+
+.shop-header .right{
+
+display:flex;
+
+gap:18px;
+
+align-items:center;
+
+}
+
+/* ==========================================
+FILTER BUTTON
+========================================== */
+
+.filter-btn{
+
+height:52px;
+
+padding:0 28px;
+
+border:none;
+
+background:#111;
+
+color:#fff;
+
+border-radius:50px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+cursor:pointer;
+
+font-size:14px;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+transition:.35s;
+
+}
+
+.filter-btn:hover{
+
+background:#333;
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================================
+SORT
+========================================== */
+
+#sortProducts{
+
+height:52px;
+
+padding:0 22px;
+
+border:1px solid #ddd;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+background:#fff;
+
+cursor:pointer;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+#sortProducts:hover{
+
+border-color:#111;
+
+}
+
+/* ==========================================
+PRODUCT GRID
+========================================== */
+
+.products-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:35px;
+
+}
+
+/* ==========================================
+PRODUCT CARD
+========================================== */
+
+.product-card{
+
+background:#fff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+transition:.35s;
+
+cursor:pointer;
+
+box-shadow:0 8px 30px rgba(0,0,0,.06);
+
+position:relative;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+IMAGE
+========================================== */
+
+.product-image{
+
+width:100%;
+
+height:430px;
+
+overflow:hidden;
+
+background:#f8f8f8;
+
+position:relative;
+
+}
+
+.product-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.product-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ==========================================
+BADGE
+========================================== */
+
+.product-badge{
+
+position:absolute;
+
+top:18px;
+
+left:18px;
+
+background:#111;
+
+color:#fff;
+
+padding:7px 15px;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:.8px;
+
+z-index:2;
+
+}
+
+/* ==========================================
+INFO
+========================================== */
+
+.product-info{
+
+padding:22px;
+
+}
+
+.product-brand{
+
+font-size:13px;
+
+color:#888;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+margin-bottom:8px;
+
+}
+
+.product-name{
+
+font-size:19px;
+
+font-weight:700;
+
+margin-bottom:12px;
+
+color:#111;
+
+line-height:1.4;
+
+}
+
+/* ==========================================
+PRICE
+========================================== */
+
+/* ==========================================
+PRICE
+========================================== */
+
+.product-price{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.current-price,
+.new-price{
+    font-size:22px;
+    font-weight:800;
+    color:#111;
+}
+
+.old-price{
+    font-size:16px;
+    color:#999;
+    text-decoration:line-through;
+}
+
+.discount{
+    font-size:13px;
+    font-weight:700;
+    color:#d62828;
+}
+/* ==========================================
+BUTTON
+========================================== */
+
+.view-btn{
+
+width:100%;
+
+height:50px;
+
+border:none;
+
+background:#111;
+
+color:#fff;
+
+border-radius:12px;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.view-btn:hover{
+
+background:#333;
+
+}
+
+/* ==========================================
+FILTER SIDEBAR
+========================================== */
+
+.filter-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.35);
+
+backdrop-filter:blur(2px);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:998;
+
+}
+
+.filter-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.filter-sidebar{
+
+position:fixed;
+
+top:0;
+
+left:-380px;
+
+width:390px;
+
+height:100vh;
+
+background:#fff;
+
+padding:35px;
+
+overflow-y:auto;
+
+box-shadow:-10px 0 40px rgba(0,0,0,.12);
+
+transition:.4s;
+
+z-index:999;
+
+}
+
+.filter-sidebar.active{
+
+left:0;
+
+}
+
+.filter-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding-bottom:18px;
+
+margin-bottom:28px;
+
+border-bottom:1px solid #eee;
+
+}
+
+.filter-header h3{
+
+font-size:24px;
+
+font-weight:800;
+
+color:#111;
+
+}
+
+#closeFilter{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+background:#f5f5f5;
+
+border-radius:50;
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:22px;
+
+transition:.3s;
+
+}
+
+#closeFilter:hover{
+
+background:#111;
+
+color:#fff;
+
+}
+
+.filter-box{
+
+margin-bottom:30px;
+
+}
+
+.filter-box h4{
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+color:#111;
+
+}
+
+.filter-box label{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:14px;
+
+font-size:15px;
+
+color:#555;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.filter-box label:hover{
+
+color:#111;
+
+}
+
+.filter-box input{
+
+width:18px;
+
+height:18px;
+
+accent-color:#111;
+
+}
+
+.filter-footer{
+
+margin-top:35px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.apply-btn{
+
+width:100%;
+
+height:52px;
+
+border:none;
+
+border-radius:14px;
+
+background:#111;
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.apply-btn:hover{
+
+background:#333;
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================================
+END FILTER SIDEBAR
+========================================== */
+/* ==========================================
+FOOTER
+========================================== */
+
+.footer{
+
+margin-top:80px;
+
+background:#111;
+
+padding:70px 8% 30px;
+
+color:#fff;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:40px;
+
+}
+
+.footer h3{
+
+font-size:20px;
+
+margin-bottom:20px;
+
+font-weight:700;
+
+}
+
+.footer p{
+
+font-size:14px;
+
+line-height:1.9;
+
+color:#cfcfcf;
+
+}
+
+.footer ul{
+
+list-style:none;
+
+}
+
+.footer ul li{
+
+margin-bottom:12px;
+
+}
+
+.footer ul li a{
+
+text-decoration:none;
+
+color:#cfcfcf;
+
+transition:.3s;
+
+}
+
+.footer ul li a:hover{
+
+color:#fff;
+
+}
+
+.footer-bottom{
+
+margin-top:50px;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+font-size:14px;
+
+color:#aaa;
+
+}
+
+/* ==========================================
+LOADING
+========================================== */
+
+.loading{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 0;
+
+font-size:16px;
+
+font-weight:600;
+
+color:#777;
+
+}
+.discount-text{
+color:#d62828;
+font-size:13px;
+font-weight:700;
+margin-left:8px;
+}
+.product-image{
+
+position:relative;
+
+}
+
+.wishlist-btn{
+cursor: pointer;
+position:absolute;
+
+top:12px;
+
+right:12px;
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:50%;
+
+background:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+z-index:100;
+
+}
+
+.wishlist-btn i{
+
+font-size:20px;
+
+color:#111;
+
+}
+
+.wishlist-btn.active i{
+
+color:#e63946;
+
+}
+
+.wishlist-btn:hover{
+
+transform:scale(1.08);
+
+transition:.3s;
+
+}
+
+/* ==========================================
+PRODUCT IMAGE
+========================================== */
+
+.product-image{
+
+width:100%;
+
+height:430px;
+
+overflow:hidden;
+
+background:#f8f8f8;
+
+position:relative;
+
+}
+
+.product-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.product-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+.toast{
+
+position:fixed;
+
+top:30px;
+
+right:30px;
+
+background:#111;
+
+color:#fff;
+
+padding:14px 24px;
+
+border-radius:8px;
+
+font-size:14px;
+
+font-weight:500;
+
+opacity:0;
+
+transform:translateY(-20px);
+
+transition:.35s;
+
+z-index:99999;
+
+}
+
+.toast.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.shop-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(1px);
+    z-index:1;
+}
+
+/* ==========================================
+   ZM LABEL — OVERSIZED TEES RESPONSIVE
+   ========================================== */
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px){
+
+    .shop-hero{
+        height:420px;
+        padding:0 6%;
+    }
+
+    .hero-content{
+        max-width:480px;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:25px;
+    }
+
+    .product-image{
+        height:380px;
+    }
+
+    .shop-wrapper{
+        padding:0 28px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px){
+
+    .shop-hero{
+
+        height:430px;
+
+        padding:0 28px;
+
+        align-items:center;
+
+        background-position:center;
+    }
+
+
+    .hero-content{
+
+        width:100%;
+
+        max-width:430px;
+
+        padding:0;
+
+    }
+
+
+    .hero-subtitle{
+
+        font-size:11px;
+
+        letter-spacing:2px;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size:42px;
+
+        line-height:1.08;
+
+        margin:12px 0;
+
+        max-width:390px;
+
+    }
+
+
+    .hero-content p{
+
+        font-size:15px;
+
+        line-height:1.6;
+
+        margin-bottom:25px;
+
+        max-width:390px;
+
+    }
+
+
+    .hero-btn{
+
+        width:165px;
+
+        height:50px;
+
+        font-size:14px;
+
+    }
+
+
+    /* SHOP HEADER */
+
+    .shop-wrapper{
+
+        margin:45px auto;
+
+        padding:0 22px;
+
+    }
+
+
+    .shop-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .shop-header .left h2{
+
+        font-size:30px;
+
+    }
+
+
+    .shop-header .left p{
+
+        font-size:14px;
+
+    }
+
+
+    .shop-header .right{
+
+        width:100%;
+
+        display:flex;
+
+        gap:10px;
+
+    }
+
+
+    .filter-btn{
+
+        flex:1;
+
+        height:48px;
+
+        justify-content:center;
+
+        padding:0 15px;
+
+    }
+
+
+    #sortProducts{
+
+        flex:1;
+
+        height:48px;
+
+        padding:0 12px;
+
+    }
+
+
+    /* PRODUCT GRID */
+
+    .products-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:18px;
+
+    }
+
+
+    .product-image{
+
+        height:330px;
+
+    }
+
+
+    .product-info{
+
+        padding:16px;
+
+    }
+
+
+    .product-name{
+
+        font-size:16px;
+
+    }
+
+
+    .current-price,
+    .new-price{
+
+        font-size:18px;
+
+    }
+
+
+    .old-price{
+
+        font-size:14px;
+
+    }
+
+
+    .view-btn{
+
+        height:46px;
+
+    }
+
+
+    /* FILTER SIDEBAR */
+
+    .filter-sidebar{
+
+        width:min(88vw,350px);
+
+        padding:28px 22px;
+
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 600px){
+
+    .shop-hero{
+
+        height:400px;
+
+        padding:0 20px;
+
+    }
+
+
+    .hero-content{
+
+        max-width:100%;
+
+    }
+
+
+    .hero-subtitle{
+
+        font-size:10px;
+
+        letter-spacing:1.8px;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size:34px;
+
+        line-height:1.08;
+
+        margin:10px 0 14px;
+
+        max-width:330px;
+
+    }
+
+
+    .hero-content p{
+
+        font-size:13px;
+
+        line-height:1.6;
+
+        max-width:320px;
+
+        margin-bottom:22px;
+
+    }
+
+
+    .hero-btn{
+
+        width:150px;
+
+        height:46px;
+
+        font-size:13px;
+
+    }
+
+
+    /* SHOP */
+
+    .shop-wrapper{
+
+        padding:0 16px;
+
+        margin:38px auto;
+
+    }
+
+
+    .shop-header .left h2{
+
+        font-size:27px;
+
+    }
+
+
+    .shop-header .right{
+
+        gap:8px;
+
+    }
+
+
+    .filter-btn{
+
+        font-size:13px;
+
+        height:46px;
+
+    }
+
+
+    #sortProducts{
+
+        font-size:12px;
+
+        height:46px;
+
+    }
+
+
+    /* PRODUCTS */
+
+    .products-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
+
+    .product-image{
+
+        height:260px;
+
+    }
+
+
+    .product-info{
+
+        padding:12px;
+
+    }
+
+
+    .product-brand{
+
+        font-size:10px;
+
+        margin-bottom:5px;
+
+    }
+
+
+    .product-name{
+
+        font-size:14px;
+
+        line-height:1.3;
+
+        margin-bottom:8px;
+
+    }
+
+
+    .product-price{
+
+        gap:5px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .current-price,
+    .new-price{
+
+        font-size:16px;
+
+    }
+
+
+    .old-price{
+
+        font-size:12px;
+
+    }
+
+
+    .discount{
+
+        font-size:10px;
+
+    }
+
+
+    .view-btn{
+
+        height:42px;
+
+        font-size:13px;
+
+        border-radius:10px;
+
+    }
+
+
+    .product-badge{
+
+        top:10px;
+
+        left:10px;
+
+        padding:5px 9px;
+
+        font-size:9px;
+
+    }
+
+
+    .wishlist-btn{
+
+        width:34px;
+
+        height:34px;
+
+        top:8px;
+
+        right:8px;
+
+    }
+
+
+    .wishlist-btn i{
+
+        font-size:17px;
+
+    }
+
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px){
+
+    .shop-hero{
+
+        height:380px;
+
+        padding:0 17px;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size:30px;
+
+        max-width:290px;
+
+    }
+
+
+    .hero-content p{
+
+        font-size:12px;
+
+        max-width:285px;
+
+    }
+
+
+    .products-grid{
+
+        gap:10px;
+
+    }
+
+
+    .product-image{
+
+        height:235px;
+
+    }
+
+
+    .product-info{
+
+        padding:10px;
+
+    }
+
+
+    .product-name{
+
+        font-size:13px;
+
+    }
+
+
+    .current-price,
+    .new-price{
+
+        font-size:15px;
+
+    }
+
+
+    .filter-btn{
+
+        font-size:12px;
+
+    }
+
+
+    #sortProducts{
+
+        font-size:11px;
+
+    }
+
+}

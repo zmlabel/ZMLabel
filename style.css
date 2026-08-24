@@ -1,0 +1,3299 @@
+/* =========================================================
+   ZM LABEL — MAIN STYLE.CSS
+   COMPLETE CSS FROM ZERO
+   ========================================================= */
+
+
+/* =========================================================
+   01 — GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #fff;
+    color: #111;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   02 — COMMON SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-heading span {
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.section-heading h2 {
+    margin: 0 0 15px;
+
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+
+    color: #111;
+}
+
+.section-heading p {
+    margin: 0 auto;
+
+    max-width: 600px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   03 — HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: calc(100vh - 95px);
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+.hero-slider {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+
+    top: 50%;
+    left: 7%;
+
+    transform: translateY(-50%);
+
+    width: min(560px, 90%);
+
+    z-index: 5;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #111;
+}
+
+.hero-content h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #fffdfd;
+}
+
+.hero-content p {
+    max-width: 500px;
+
+    margin-bottom: 32px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.btn-dark,
+.btn-light {
+    min-width: 150px;
+    height: 50px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 25px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.btn-dark {
+    background: #111;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background: #c9a227;
+    color: #111;
+}
+
+.btn-light {
+    background: #fff;
+    color: #111;
+
+    border: 1px solid #111;
+}
+
+.btn-light:hover {
+    background: #111;
+    color: #fff;
+}
+
+.slider-dots {
+    position: absolute;
+
+    bottom: 28px;
+    left: 7%;
+
+    z-index: 10;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.dot {
+    width: 28px;
+    height: 3px;
+
+    background: rgba(0,0,0,.3);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.dot.active {
+    width: 45px;
+
+    background: #111;
+}
+
+
+/* =========================================================
+   04 — SHOP BY CATEGORY
+   ========================================================= */
+
+.categories {
+    padding: 100px 6%;
+
+    background: #fff;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 55px;
+}
+
+.category-card {
+    position: relative;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.06);
+}
+
+.category-overlay {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    padding: 70px 25px 25px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.75)
+    );
+
+    color: #fff;
+}
+
+.category-overlay h3 {
+    margin-bottom: 7px;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.category-overlay p {
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    opacity: .9;
+}
+
+
+/* =========================================================
+   05 — ZM LABEL MARQUEE
+   SHOP BY CATEGORY KE BAAD
+   ========================================================= */
+
+.brand-marquee {
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #111;
+    color: #fff;
+
+    padding: 20px 0;
+
+    white-space: nowrap;
+}
+
+.brand-marquee-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: brandMarquee 22s linear infinite;
+}
+
+.brand-marquee-track span {
+    flex-shrink: 0;
+
+    padding-right: 90px;
+
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+@keyframes brandMarquee {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   06 — NEW ARRIVALS
+   HORIZONTAL USER-SCROLL CAROUSEL
+   ========================================================= */
+
+.new-arrivals {
+    padding: 105px 0 100px;
+
+    background: #f8f8f6;
+
+    overflow: hidden;
+}
+
+
+/* Heading */
+
+.new-arrivals .section-heading {
+    padding: 0 6%;
+}
+
+
+/* =========================================================
+   ARRIVALS CAROUSEL
+   ========================================================= */
+
+.arrivals-carousel {
+    position: relative;
+
+    margin-top: 55px;
+}
+
+.arrivals-track-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    cursor: grab;
+}
+
+.arrivals-track-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.arrivals-track-wrapper:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   PRODUCTS GRID
+   IMPORTANT:
+   JS PRODUCTS SAME LINE MEIN RAHENGE
+   ========================================================= */
+
+.new-arrivals .products-grid {
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    gap: 22px;
+
+    width: max-content;
+
+    padding: 5px 6% 25px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+   HOODIES PAGE STYLE
+   ========================================================= */
+
+.new-arrivals .product-card {
+    position: relative;
+
+    width: 285px;
+    min-width: 285px;
+
+    flex: 0 0 285px;
+
+    background: #fff;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,.04);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.new-arrivals .product-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.10);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.new-arrivals .product-image {
+    position: relative;
+
+    width: 100%;
+    height: 375px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+.new-arrivals .product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+.new-arrivals .product-card:hover .product-image img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.new-arrivals .product-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 5;
+
+    padding: 7px 13px;
+
+    background: #111;
+    color: #fff;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   WISHLIST
+   ========================================================= */
+
+.new-arrivals .product-wishlist,
+.new-arrivals .wishlist-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.94);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.new-arrivals .product-wishlist i,
+.new-arrivals .wishlist-btn i {
+    font-size: 20px;
+
+    color: #111;
+}
+
+.new-arrivals .product-wishlist:hover,
+.new-arrivals .wishlist-btn:hover {
+    background: #111;
+}
+
+.new-arrivals .product-wishlist:hover i,
+.new-arrivals .wishlist-btn:hover i {
+    color: #fff;
+}
+
+
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
+
+.new-arrivals .product-info {
+    padding: 19px 20px 20px;
+}
+
+
+/* BRAND */
+
+.new-arrivals .product-brand,
+.new-arrivals .product-category {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #999;
+}
+
+
+/* NAME */
+
+.new-arrivals .product-title {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.new-arrivals .product-price {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 16px;
+}
+
+
+/* CURRENT */
+
+.new-arrivals .current-price {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+/* OLD PRICE */
+
+.new-arrivals .old-price {
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #aaa;
+
+    text-decoration: line-through;
+
+    text-decoration-thickness: 1px;
+}
+
+
+/* DISCOUNT */
+
+.new-arrivals .discount {
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #d62828;
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+   ========================================================= */
+
+.new-arrivals .product-actions {
+    width: 100%;
+}
+
+.new-arrivals .product-actions .view-btn,
+.new-arrivals .view-details,
+.new-arrivals .view-btn {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+    color: #fff;
+
+    border: 1px solid #111;
+    border-radius: 4px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.new-arrivals .product-actions .view-btn:hover,
+.new-arrivals .view-details:hover,
+.new-arrivals .view-btn:hover {
+    background: #c9a227;
+
+    border-color: #c9a227;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   CAROUSEL ARROWS
+   ========================================================= */
+
+.carousel-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111;
+    color: #fff;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+
+    transition: .3s ease;
+}
+
+.carousel-arrow i {
+    font-size: 20px;
+}
+
+.carousel-arrow:hover {
+    background: #c9a227;
+
+    color: #111;
+}
+
+.arrivals-prev {
+    left: 20px;
+}
+
+.arrivals-next {
+    right: 20px;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.carousel-progress {
+    width: 88%;
+
+    height: 2px;
+
+    margin: 8px auto 0;
+
+    background: #ddd;
+
+    overflow: hidden;
+}
+
+.carousel-progress span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    background: #111;
+}
+
+
+/* =========================================================
+   VIEW ALL
+   ========================================================= */
+
+.new-arrivals .view-all {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 45px;
+
+    padding: 0 6%;
+}
+
+.new-arrivals .view-all .view-btn {
+    width: 220px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.new-arrivals .view-all .view-btn:hover {
+    background: #c9a227;
+
+    color: #111;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   07 — ZM EDIT
+   AUTO MOVING PRODUCT RAIL
+   ========================================================= */
+
+.zm-edit {
+    width: 100%;
+
+    padding: 105px 0 100px;
+
+    background: #fff;
+
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.zm-edit-header {
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+
+    padding: 0 20px;
+
+    text-align: center;
+}
+
+.zm-edit-header .section-label {
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.zm-edit-header h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+
+    color: #111;
+}
+
+.zm-edit-header p {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   FLOATING PRODUCT WRAPPER
+   ========================================================= */
+
+.floating-products-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PRODUCT RAIL
+   ALWAYS ONE LINE
+   ========================================================= */
+
+.floating-products {
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    align-items: flex-start;
+
+    gap: 22px;
+
+    width: max-content;
+
+    padding: 10px 0 35px;
+
+    animation: zmInfiniteProducts 35s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.zm-floating-card {
+    position: relative;
+
+    width: 285px;
+    min-width: 285px;
+
+    max-width: 285px;
+
+    flex: 0 0 285px;
+
+    background: #fff;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,.05);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* NO VERTICAL FLOATING */
+
+.zm-floating-card:nth-child(n) {
+    margin-top: 0 !important;
+}
+
+
+/* HOVER */
+
+.zm-floating-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.10);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.zm-floating-image {
+    position: relative;
+
+    width: 100%;
+    height: 375px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+.zm-floating-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+.zm-floating-card:hover .zm-floating-image img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.zm-floating-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 5;
+
+    padding: 7px 13px;
+
+    background: #111;
+    color: #fff;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   WISHLIST
+   ========================================================= */
+
+.zm-floating-wishlist {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.94);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.zm-floating-wishlist i {
+    font-size: 20px;
+
+    color: #111;
+}
+
+.zm-floating-wishlist:hover {
+    background: #111;
+}
+
+.zm-floating-wishlist:hover i {
+    color: #fff;
+}
+
+
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
+
+.zm-floating-info {
+    padding: 19px 20px 20px;
+}
+
+
+/* BRAND */
+
+.zm-floating-brand {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #999;
+}
+
+
+/* NAME */
+
+.zm-floating-name {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.zm-floating-price {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 16px;
+}
+
+
+/* CURRENT */
+
+.zm-floating-price .current-price {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+/* OLD */
+
+.zm-floating-price .old-price {
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #aaa;
+
+    text-decoration: line-through;
+
+    text-decoration-thickness: 1px;
+}
+
+
+/* DISCOUNT */
+
+.zm-floating-price .discount {
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #d62828;
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+   ========================================================= */
+
+.zm-floating-view {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+    color: #fff;
+
+    border: 1px solid #111;
+    border-radius: 4px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    opacity: 1;
+
+    transform: none;
+
+    transition: .3s ease;
+}
+
+.zm-floating-view:hover {
+    background: #c9a227;
+
+    border-color: #c9a227;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   INFINITE ZM EDIT ANIMATION
+   IMPORTANT:
+   JS SHOULD RENDER/CLONE PRODUCTS TWICE
+   ========================================================= */
+
+@keyframes zmInfiniteProducts {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* PAUSE */
+
+.floating-products-wrapper:hover .floating-products {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   VIEW COLLECTION
+   ========================================================= */
+
+.zm-edit-action {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 45px;
+
+    padding: 0 20px;
+}
+
+.zm-edit-btn {
+    min-width: 210px;
+    height: 50px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 28px;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.zm-edit-btn:hover {
+    background: #c9a227;
+
+    color: #111;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   08 — FEATURED BANNER
+   ========================================================= */
+
+.featured-banner {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 65px;
+
+    padding: 105px 6%;
+
+    background: #fff;
+}
+
+.featured-left span {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #b38b2d;
+}
+
+.featured-left h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+}
+
+.featured-left p {
+    max-width: 520px;
+
+    margin-bottom: 32px;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #666;
+}
+
+.shop-btn {
+    width: 220px;
+    height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.shop-btn:hover {
+    background: #c9a227;
+
+    color: #111;
+}
+
+.featured-right {
+    overflow: hidden;
+
+    border-radius: 8px;
+}
+
+.featured-right img {
+    width: 100%;
+    height: 620px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+.featured-right:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   09 — WHY US
+   ========================================================= */
+
+.why-us {
+    padding: 105px 6%;
+
+    background: #f8f8f6;
+}
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+
+    margin-top: 55px;
+}
+
+.why-card {
+    padding: 42px 28px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 7px;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08);
+}
+
+.why-card i {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 42px;
+
+    color: #c9a227;
+}
+
+.why-card h3 {
+    margin-bottom: 13px;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.why-card p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   10 — NEWSLETTER
+   ========================================================= */
+
+.newsletter {
+    padding: 100px 6%;
+
+    background: #111;
+
+    color: #fff;
+
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 720px;
+
+    margin: auto;
+}
+
+.newsletter span {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    color: #c9a227;
+}
+
+.newsletter h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.newsletter p {
+    margin-bottom: 32px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #ccc;
+}
+
+.newsletter-form {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.newsletter-form input {
+    width: 420px;
+    height: 54px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    outline: none;
+
+    background: #fff;
+    color: #111;
+
+    font-size: 13px;
+}
+
+.newsletter-form button {
+    height: 54px;
+
+    padding: 0 30px;
+
+    background: #c9a227;
+    color: #111;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #fff;
+}
+
+
+/* =========================================================
+   11 — FOOTER
+   ========================================================= */
+
+footer {
+    padding: 70px 6% 30px;
+
+    background: #050505;
+
+    color: #ddd;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 45px;
+}
+
+.footer-grid h2 {
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.footer-grid h3 {
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.footer-grid p {
+    max-width: 350px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #999;
+}
+
+.footer-grid a {
+    display: block;
+
+    margin-bottom: 11px;
+
+    font-size: 12px;
+
+    color: #999;
+
+    transition: .3s ease;
+}
+
+.footer-grid a:hover {
+    color: #c9a227;
+
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    margin-top: 50px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    max-width: none;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   12 — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-banner {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   13 — TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        left: 6%;
+    }
+
+    .new-arrivals .product-card,
+    .zm-floating-card {
+        width: 260px;
+        min-width: 260px;
+        max-width: 260px;
+
+        flex-basis: 260px;
+    }
+
+    .new-arrivals .product-image,
+    .zm-floating-image {
+        height: 345px;
+    }
+
+    .featured-banner {
+        grid-template-columns: 1fr;
+
+        padding: 80px 6%;
+    }
+
+    .featured-right img {
+        height: 550px;
+    }
+
+}
+
+
+/* =========================================================
+   14 — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* HERO */
+
+    .hero {
+        height: 78vh;
+
+        min-height: 520px;
+    }
+
+    .hero-content {
+        top: auto;
+        bottom: 70px;
+        left: 20px;
+
+        transform: none;
+
+        width: calc(100% - 40px);
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+    }
+
+    .btn-dark,
+    .btn-light {
+        min-width: 135px;
+
+        height: 46px;
+
+        padding: 0 16px;
+
+        font-size: 10px;
+    }
+
+
+    /* CATEGORY */
+
+    .categories {
+        padding: 70px 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+
+        margin-top: 38px;
+    }
+
+    .category-card {
+        height: 270px;
+    }
+
+    .category-overlay {
+        padding: 50px 14px 15px;
+    }
+
+    .category-overlay h3 {
+        font-size: 15px;
+    }
+
+    .category-overlay p {
+        font-size: 9px;
+    }
+
+
+    /* MARQUEE */
+
+    .brand-marquee {
+        padding: 15px 0;
+    }
+
+    .brand-marquee-track span {
+        padding-right: 55px;
+
+        font-size: 28px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* NEW ARRIVALS */
+
+    .new-arrivals {
+        padding: 70px 0 75px;
+    }
+
+    .new-arrivals .section-heading {
+        padding: 0 20px;
+    }
+
+    .new-arrivals .products-grid {
+        gap: 14px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .new-arrivals .product-card {
+        width: 215px;
+        min-width: 215px;
+        max-width: 215px;
+
+        flex-basis: 215px;
+    }
+
+    .new-arrivals .product-image {
+        height: 285px;
+    }
+
+    .new-arrivals .product-info {
+        padding: 15px;
+    }
+
+    .new-arrivals .product-category,
+    .new-arrivals .product-brand {
+        font-size: 8px;
+    }
+
+    .new-arrivals .product-title {
+        font-size: 15px;
+    }
+
+    .new-arrivals .current-price {
+        font-size: 17px;
+    }
+
+    .new-arrivals .old-price {
+        font-size: 11px;
+    }
+
+    .new-arrivals .discount {
+        font-size: 9px;
+    }
+
+    .new-arrivals .product-wishlist,
+    .new-arrivals .wishlist-btn {
+        width: 34px;
+        height: 34px;
+
+        top: 10px;
+        right: 10px;
+    }
+
+    .new-arrivals .product-wishlist i,
+    .new-arrivals .wishlist-btn i {
+        font-size: 16px;
+    }
+
+    .new-arrivals .product-badge {
+        top: 10px;
+        left: 10px;
+
+        padding: 6px 9px;
+
+        font-size: 8px;
+    }
+
+    .new-arrivals .product-actions .view-btn,
+    .new-arrivals .view-details,
+    .new-arrivals .view-btn {
+        height: 42px;
+
+        font-size: 9px;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .carousel-arrow i {
+        font-size: 17px;
+    }
+
+    .arrivals-prev {
+        left: 8px;
+    }
+
+    .arrivals-next {
+        right: 8px;
+    }
+
+
+    /* ZM EDIT */
+
+    .zm-edit {
+        padding: 70px 0 75px;
+    }
+
+    .zm-edit-header {
+        margin-bottom: 35px;
+    }
+
+    .zm-edit-header h2 {
+        font-size: 34px;
+    }
+
+    .zm-edit-header p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .floating-products {
+        gap: 14px;
+
+        padding: 10px 0 30px;
+
+        animation-duration: 28s;
+    }
+
+    .zm-floating-card {
+        width: 215px;
+        min-width: 215px;
+        max-width: 215px;
+
+        flex-basis: 215px;
+    }
+
+    .zm-floating-image {
+        height: 285px;
+    }
+
+    .zm-floating-info {
+        padding: 15px;
+    }
+
+    .zm-floating-brand {
+        font-size: 8px;
+    }
+
+    .zm-floating-name {
+        font-size: 15px;
+    }
+
+    .zm-floating-price {
+        gap: 7px;
+    }
+
+    .zm-floating-price .current-price {
+        font-size: 17px;
+    }
+
+    .zm-floating-price .old-price {
+        font-size: 11px;
+    }
+
+    .zm-floating-price .discount {
+        font-size: 9px;
+    }
+
+    .zm-floating-view {
+        height: 42px;
+
+        font-size: 9px;
+    }
+
+    .zm-floating-wishlist {
+        width: 34px;
+        height: 34px;
+
+        top: 10px;
+        right: 10px;
+    }
+
+    .zm-floating-wishlist i {
+        font-size: 16px;
+    }
+
+    .zm-floating-badge {
+        top: 10px;
+        left: 10px;
+
+        padding: 6px 9px;
+
+        font-size: 8px;
+    }
+
+
+    /* FEATURED */
+
+    .featured-banner {
+        padding: 70px 20px;
+
+        gap: 40px;
+    }
+
+    .featured-left h2 {
+        font-size: 38px;
+    }
+
+    .featured-left p {
+        font-size: 13px;
+    }
+
+    .featured-right img {
+        height: 430px;
+    }
+
+
+    /* WHY US */
+
+    .why-us {
+        padding: 70px 20px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 38px;
+    }
+
+    .why-card {
+        padding: 32px 22px;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter {
+        padding: 70px 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 55px 20px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px 25px;
+    }
+
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-grid > div:nth-child(4) {
+        grid-column: 1 / -1;
+    }
+
+    .footer-grid h2 {
+        font-size: 25px;
+    }
+
+    .footer-grid h3 {
+        font-size: 10px;
+    }
+
+    .footer-grid a {
+        font-size: 11px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   15 — VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .category-grid {
+        gap: 9px;
+    }
+
+    .category-card {
+        height: 240px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .new-arrivals .product-card {
+        width: 195px;
+        min-width: 195px;
+        max-width: 195px;
+
+        flex-basis: 195px;
+    }
+
+    .new-arrivals .product-image {
+        height: 260px;
+    }
+
+    .zm-floating-card {
+        width: 195px;
+        min-width: 195px;
+        max-width: 195px;
+
+        flex-basis: 195px;
+    }
+
+    .zm-floating-image {
+        height: 260px;
+    }
+
+}
+
+
+/* =========================================================
+   END OF STYLE.CSS
+   ========================================================= */
+   /* =========================================================
+   ZM EDIT — FINAL PRICE FIX
+   ========================================================= */
+
+/* PRICE ROW */
+.zm-floating-card .zm-floating-price {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 9px !important;
+    margin: 0 0 16px !important;
+    width: 100% !important;
+}
+
+
+/* CURRENT / SALE PRICE */
+.zm-floating-card .zm-floating-price .zm-current-price {
+    display: inline-block !important;
+
+    color: #111 !important;
+
+    font-size: 18px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.2 !important;
+
+    text-decoration: none !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* OLD PRICE */
+.zm-floating-card .zm-floating-price .zm-old-price {
+    display: inline-block !important;
+
+    color: #999 !important;
+
+    font-size: 13px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.2 !important;
+
+    text-decoration-line: line-through !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: 1.5px !important;
+    text-decoration-color: #999 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* DISCOUNT */
+.zm-floating-card .zm-floating-price .zm-discount {
+    display: inline-block !important;
+
+    color: #d62828 !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.2 !important;
+
+    text-decoration: none !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* SALE BADGE */
+.zm-floating-card .zm-floating-badge.sale-badge {
+    background: #d62828 !important;
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .zm-floating-card .zm-floating-price {
+        gap: 6px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .zm-floating-card .zm-floating-price .zm-current-price {
+        font-size: 16px !important;
+    }
+
+    .zm-floating-card .zm-floating-price .zm-old-price {
+        font-size: 11px !important;
+        text-decoration-line: line-through !important;
+        text-decoration-thickness: 1px !important;
+    }
+
+    .zm-floating-card .zm-floating-price .zm-discount {
+        font-size: 9px !important;
+        color: #d62828 !important;
+    }
+
+}
+/* =========================================================
+   ZM LABEL — MOBILE / TABLET FINAL RESPONSIVE
+   FEATURED + WHY US + NEWSLETTER + FOOTER
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* =========================
+       FEATURED BANNER
+       ========================= */
+
+    .featured-banner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 80px 5%;
+    }
+
+    .featured-left h2 {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    .featured-left p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .featured-right img {
+        height: 500px;
+    }
+
+
+    /* =========================
+       WHY US
+       2 CARDS SIDE BY SIDE
+       ========================= */
+
+    .why-us {
+        padding: 80px 5%;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 40px;
+    }
+
+    .why-card {
+        min-width: 0;
+        padding: 32px 20px;
+    }
+
+    .why-card i {
+        font-size: 36px;
+    }
+
+    .why-card h3 {
+        font-size: 16px;
+    }
+
+    .why-card p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       NEWSLETTER
+       ========================= */
+
+    .newsletter {
+        padding: 80px 5%;
+    }
+
+    .newsletter-content {
+        max-width: 650px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+        padding: 60px 5% 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       FEATURED BANNER
+       TEXT + IMAGE SIDE BY SIDE
+       ===================================================== */
+
+    .featured-banner {
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 65px 15px;
+
+    }
+
+
+    .featured-left {
+        min-width: 0;
+    }
+
+
+    .featured-left span {
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .featured-left h2 {
+
+        margin-bottom: 12px;
+
+        font-size: 27px;
+
+        line-height: 1.08;
+
+        letter-spacing: -.7px;
+
+    }
+
+
+    .featured-left p {
+
+        margin-bottom: 20px;
+
+        font-size: 11px;
+
+        line-height: 1.65;
+
+    }
+
+
+    .featured-left .shop-btn {
+
+        width: 100%;
+
+        max-width: 150px;
+
+        height: 42px;
+
+        font-size: 9px;
+
+    }
+
+
+    .featured-right {
+
+        width: 100%;
+
+        border-radius: 6px;
+
+    }
+
+
+    .featured-right img {
+
+        width: 100%;
+
+        height: 340px;
+
+        object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       WHY US
+       2 CARDS SIDE BY SIDE
+       ===================================================== */
+
+    .why-us {
+
+        padding: 65px 15px;
+
+    }
+
+
+    .why-us .section-heading {
+
+        padding: 0;
+
+    }
+
+
+    .why-us .section-heading span {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .why-us .section-heading h2 {
+
+        font-size: 30px;
+
+        line-height: 1.15;
+
+    }
+
+
+    .why-us .section-heading p {
+
+        font-size: 11px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .why-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-top: 35px;
+
+    }
+
+
+    .why-card {
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 25px 12px;
+
+        border-radius: 6px;
+
+    }
+
+
+    .why-card i {
+
+        font-size: 30px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .why-card h3 {
+
+        margin-bottom: 8px;
+
+        font-size: 13px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .why-card p {
+
+        font-size: 10px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* =====================================================
+       NEWSLETTER
+       ===================================================== */
+
+    .newsletter {
+
+        padding: 65px 15px;
+
+    }
+
+
+    .newsletter-content {
+
+        width: 100%;
+
+    }
+
+
+    .newsletter span {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .newsletter h2 {
+
+        margin-bottom: 14px;
+
+        font-size: 29px;
+
+        line-height: 1.15;
+
+    }
+
+
+    .newsletter p {
+
+        margin-bottom: 24px;
+
+        font-size: 11px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .newsletter-form {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        width: 100%;
+
+    }
+
+
+    .newsletter-form input {
+
+        width: 100%;
+
+        height: 48px;
+
+        font-size: 11px;
+
+        padding: 0 14px;
+
+    }
+
+
+    .newsletter-form button {
+
+        width: 100%;
+
+        height: 48px;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+       2 COLUMNS
+       ===================================================== */
+
+    footer {
+
+        padding: 55px 15px 20px;
+
+    }
+
+
+    .footer-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 32px 20px;
+
+    }
+
+
+    /* BRAND FULL WIDTH */
+
+    .footer-grid > div:first-child {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .footer-grid > div:first-child p {
+
+        max-width: 100%;
+
+    }
+
+
+    /* FOLLOW US FULL WIDTH */
+
+    .footer-grid > div:nth-child(4) {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .footer-grid h2 {
+
+        margin-bottom: 12px;
+
+        font-size: 23px;
+
+    }
+
+
+    .footer-grid h3 {
+
+        margin-bottom: 13px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .footer-grid p {
+
+        font-size: 11px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .footer-grid a {
+
+        margin-bottom: 9px;
+
+        font-size: 10px;
+
+    }
+
+
+    .footer-bottom {
+
+        margin-top: 35px;
+
+        padding-top: 20px;
+
+    }
+
+
+    .footer-bottom p {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    /* FEATURED */
+
+    .featured-banner {
+
+        gap: 12px;
+
+        padding: 55px 12px;
+
+    }
+
+
+    .featured-left h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .featured-left p {
+
+        font-size: 10px;
+
+    }
+
+
+    .featured-right img {
+
+        height: 300px;
+
+    }
+
+
+    /* WHY US */
+
+    .why-grid {
+
+        gap: 8px;
+
+    }
+
+
+    .why-card {
+
+        padding: 22px 9px;
+
+    }
+
+
+    .why-card i {
+
+        font-size: 27px;
+
+    }
+
+
+    .why-card h3 {
+
+        font-size: 12px;
+
+    }
+
+
+    .why-card p {
+
+        font-size: 9px;
+
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+
+        gap: 28px 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    /* FEATURED */
+
+    .featured-banner {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 9px;
+
+        padding: 50px 10px;
+
+    }
+
+
+    .featured-left h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .featured-left p {
+
+        font-size: 9px;
+
+        line-height: 1.55;
+
+    }
+
+
+    .featured-left .shop-btn {
+
+        max-width: 125px;
+
+        height: 38px;
+
+        font-size: 8px;
+
+    }
+
+
+    .featured-right img {
+
+        height: 270px;
+
+    }
+
+
+    /* WHY */
+
+    .why-card {
+
+        padding: 20px 7px;
+
+    }
+
+
+    .why-card i {
+
+        font-size: 24px;
+
+    }
+
+
+    .why-card h3 {
+
+        font-size: 11px;
+
+    }
+
+
+    .why-card p {
+
+        font-size: 8px;
+
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid h2 {
+
+        font-size: 21px;
+
+    }
+
+}
+/* =========================================================
+   FINAL MOBILE FIX — ZM LABEL
+   WHY US + NEWSLETTER + FOOTER
+   Paste at the VERY END of CSS
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================================
+       GLOBAL SECTION WIDTH FIX
+    ========================================= */
+
+    .why-us,
+    .newsletter,
+    footer {
+        width: 100%;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       WHY US
+       2 CARDS PER ROW
+    ========================================= */
+
+    .why-us {
+        padding: 65px 16px !important;
+        overflow: hidden;
+    }
+
+    .why-us .section-heading {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .why-grid {
+        width: 100% !important;
+        max-width: none !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 12px !important;
+
+        margin-top: 35px !important;
+    }
+
+    .why-card {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 28px 12px !important;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .why-card i {
+        font-size: 32px !important;
+        margin-bottom: 14px;
+    }
+
+    .why-card h3 {
+        font-size: 14px !important;
+        margin-bottom: 8px;
+    }
+
+    .why-card p {
+        font-size: 10px !important;
+        line-height: 1.6 !important;
+    }
+
+
+    /* =========================================
+       NEWSLETTER
+    ========================================= */
+
+    .newsletter {
+        padding: 65px 16px !important;
+
+        text-align: center;
+
+        overflow: hidden;
+    }
+
+    .newsletter-content {
+        width: 100% !important;
+        max-width: 650px !important;
+
+        margin: 0 auto !important;
+    }
+
+    .newsletter h2 {
+        font-size: 30px !important;
+        line-height: 1.2;
+    }
+
+    .newsletter p {
+        font-size: 12px !important;
+        line-height: 1.7;
+    }
+
+    .newsletter-form {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        gap: 10px !important;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100% !important;
+
+        height: 50px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       FOOTER
+       2 COLUMNS ON MOBILE
+    ========================================= */
+
+    footer {
+        padding: 50px 18px 20px !important;
+
+        overflow: hidden;
+    }
+
+    .footer-grid {
+        width: 100% !important;
+        max-width: none !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 35px 22px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* BRAND — FULL WIDTH */
+
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1 !important;
+        width: 100%;
+    }
+
+
+    /* SHOP */
+
+    .footer-grid > div:nth-child(2) {
+        grid-column: auto !important;
+    }
+
+
+    /* SUPPORT */
+
+    .footer-grid > div:nth-child(3) {
+        grid-column: auto !important;
+    }
+
+
+    /* FOLLOW US — FULL WIDTH */
+
+    .footer-grid > div:nth-child(4) {
+        grid-column: 1 / -1 !important;
+        width: 100%;
+    }
+
+
+    /* FOOTER TEXT */
+
+    .footer-grid h2 {
+        font-size: 23px !important;
+        margin-bottom: 14px;
+    }
+
+    .footer-grid h3 {
+        font-size: 10px !important;
+
+        margin-bottom: 14px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .footer-grid p {
+        max-width: 100% !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.7 !important;
+    }
+
+    .footer-grid a {
+        font-size: 11px !important;
+
+        margin-bottom: 9px;
+    }
+
+
+    /* =========================================
+       FOOTER BOTTOM
+    ========================================= */
+
+    .footer-bottom {
+        width: 100% !important;
+
+        margin-top: 40px !important;
+
+        padding-top: 20px !important;
+
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 9px !important;
+
+        line-height: 1.6 !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .why-us {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .why-grid {
+        gap: 9px !important;
+    }
+
+    .why-card {
+        padding: 24px 9px !important;
+    }
+
+    .why-card i {
+        font-size: 28px !important;
+    }
+
+    .why-card h3 {
+        font-size: 13px !important;
+    }
+
+    .why-card p {
+        font-size: 9px !important;
+    }
+
+
+    footer {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .footer-grid {
+        gap: 30px 16px !important;
+    }
+
+}

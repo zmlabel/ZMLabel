@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | ZM LABEL</title>
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+       <link rel="stylesheet" href="search.css">
+       <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+<!-- ==========================
+TOP BAR
+========================== -->
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    <p>Free Shipping On Orders Above Rs.4999</p>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <!-- LEFT MOBILE ACTIONS -->
+    <div class="mobile-left-actions">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-label="Open Menu"
+        >
+            <i class="ri-menu-line"></i>
+        </button>
+
+        <a href="shop.html" class="mobile-search" aria-label="Search">
+            <i class="ri-search-line"></i>
+        </a>
+
+    </div>
+
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="index.html">
+            ZM LABEL
+        </a>
+    </div>
+
+
+    <!-- DESKTOP NAV -->
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html" class="active">Shop</a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+    Hoodies
+</a>
+            </li>
+
+            <li>
+                <a href="oversized-tees.html">
+    Oversized
+</a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- RIGHT ACTIONS -->
+    <div class="icons">
+
+        <!-- ACCOUNT -->
+        <a href="account.html" title="My Account">
+            <i class="ri-user-line"></i>
+        </a>
+
+
+        <!-- SEARCH - DESKTOP ONLY -->
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search"
+        >
+            <i class="ri-search-line"></i>
+        </a>
+
+
+        <!-- WISHLIST -->
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist"
+        >
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">0</span>
+
+        </a>
+
+
+        <!-- CART -->
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart"
+        >
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">0</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- MOBILE SIDEBAR -->
+
+<div id="overlay" class="overlay"></div>
+
+
+<aside id="sidebar" class="mobile-sidebar">
+
+    <div class="sidebar-header">
+
+        <span>ZM LABEL</span>
+
+        <button
+            id="closeMenu"
+            class="close-menu"
+            aria-label="Close Menu"
+        >
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="hoodies.html">
+            Hoodies & Shirts
+        </a>
+
+        <a href="oversized.html">
+            Oversized Tees
+        </a>
+
+        <a href="bottom.html">
+            Bottom
+        </a>
+
+        <a href="footwear.html">
+            Footwear
+        </a>
+
+        <a
+            href="sale.html"
+            class="sidebar-sale"
+        >
+            Sale
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="account.html">
+
+            <i class="ri-user-3-line"></i>
+
+            My Account
+
+        </a>
+
+
+        <a href="wishlist.html">
+
+            <i class="ri-heart-line"></i>
+
+            Wishlist
+
+        </a>
+
+
+        <a href="cart.html">
+
+            <i class="ri-shopping-bag-line"></i>
+
+            Cart
+
+        </a>
+
+    </div>
+
+</aside>
+
+<section class="search-page">
+
+    <!-- ==========================================
+         SEARCH HEADER
+    ========================================== -->
+
+    <div class="search-header">
+
+        <span class="search-label">
+            ZM LABEL
+        </span>
+
+        <h1>
+            Search Products
+        </h1>
+
+        <p>
+            Find your favourite pieces from our latest collections.
+        </p>
+
+    </div>
+
+
+    <!-- ==========================================
+         SEARCH BOX
+    ========================================== -->
+
+    <div class="search-box">
+
+        <i class="ri-search-line"></i>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search T-Shirts, Hoodies, Jeans, Shoes..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            id="clearSearch"
+            class="clear-search"
+            aria-label="Clear Search"
+        >
+            <i class="ri-close-line"></i>
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH SUGGESTIONS -->
+
+    <div
+        id="suggestions"
+        class="suggestions"
+    ></div>
+
+
+    <!-- ==========================================
+         RECENT SEARCHES
+    ========================================== -->
+
+    <div class="search-history">
+
+        <div class="search-section-heading">
+
+            <h3>
+                Recent Searches
+            </h3>
+
+            <button
+                type="button"
+                id="clear-history"
+            >
+                Clear All
+            </button>
+
+        </div>
+
+        <div id="history-list"></div>
+
+    </div>
+
+
+    <!-- ==========================================
+         TRENDING SEARCHES
+    ========================================== -->
+
+    <div class="trending-search">
+
+        <div class="search-section-heading">
+
+            <h3>
+                Trending Searches
+            </h3>
+
+        </div>
+
+        <div class="trend-tags">
+
+            <button type="button" class="trend-tag">
+                Oversized Tees
+            </button>
+
+            <button type="button" class="trend-tag">
+                Hoodies
+            </button>
+
+            <button type="button" class="trend-tag">
+                Baggy Jeans
+            </button>
+
+            <button type="button" class="trend-tag">
+                Bottom
+            </button>
+
+            <button type="button" class="trend-tag">
+                Footwear
+            </button>
+
+            <button type="button" class="trend-tag">
+                New Arrivals
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         FILTERS
+    ========================================== -->
+
+    <div class="search-toolbar">
+
+        <div class="result-count">
+
+            <span id="searchCount">
+                0 Products
+            </span>
+
+        </div>
+
+
+        <div class="filters">
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="hoodies">
+                    Hoodies
+                </option>
+
+                <option value="sale">
+                    Sale
+                </option>
+
+                <option value="oversized">
+                    Oversized Tees
+                </option>
+
+                <option value="bottom">
+                    Bottom
+                </option>
+
+                <option value="footwear">
+                    Footwear
+                </option>
+
+            </select>
+
+
+            <select id="sortFilter">
+
+                <option value="default">
+                    Sort By
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         SEARCH RESULTS
+    ========================================== -->
+
+    <div
+        class="search-results"
+        id="searchProducts"
+    >
+        <!-- Products loaded from backend -->
+    </div>
+
+
+    <!-- ==========================================
+         NO RESULTS
+    ========================================== -->
+
+    <div
+        id="noResult"
+        class="no-search-result"
+        style="display:none;"
+    >
+
+        <i class="ri-search-eye-line"></i>
+
+        <h2>
+            No Products Found
+        </h2>
+
+        <p>
+            Try searching for another product or category.
+        </p>
+
+    </div>
+
+</section>
+
+
+<script src="config.js"></script>
+<script src="/navbar.js"></script>
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="wishlist.js"></script>
+<script src="search.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>

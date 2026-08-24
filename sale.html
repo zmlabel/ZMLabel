@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ZM LABEL Sale — Premium fashion at exclusive prices."
+    >
+
+    <title>Sale | ZM LABEL</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         REMIX ICONS
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         SALE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="sale.css"
+    >
+ <link
+        rel="stylesheet"
+        href="navbar.css"
+    >
+
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    <p>Free Shipping On Orders Above Rs.4999</p>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <!-- LEFT MOBILE ACTIONS -->
+    <div class="mobile-left-actions">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-label="Open Menu"
+        >
+            <i class="ri-menu-line"></i>
+        </button>
+
+        <a href="shop.html" class="mobile-search" aria-label="Search">
+            <i class="ri-search-line"></i>
+        </a>
+
+    </div>
+
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="index.html">
+            ZM LABEL
+        </a>
+    </div>
+
+
+    <!-- DESKTOP NAV -->
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+    Hoodies
+</a>
+            </li>
+
+            <li>
+                <a href="oversized-tees.html">
+    Oversized
+</a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- RIGHT ACTIONS -->
+    <div class="icons">
+
+        <!-- ACCOUNT -->
+        <a href="account.html" title="My Account">
+            <i class="ri-user-line"></i>
+        </a>
+
+
+        <!-- SEARCH - DESKTOP ONLY -->
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search"
+        >
+            <i class="ri-search-line"></i>
+        </a>
+
+
+        <!-- WISHLIST -->
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist"
+        >
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">0</span>
+
+        </a>
+
+
+        <!-- CART -->
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart"
+        >
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">0</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- MOBILE SIDEBAR -->
+
+<div id="overlay" class="overlay"></div>
+
+
+<aside id="sidebar" class="mobile-sidebar">
+
+    <div class="sidebar-header">
+
+        <span>ZM LABEL</span>
+
+        <button
+            id="closeMenu"
+            class="close-menu"
+            aria-label="Close Menu"
+        >
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="hoodies.html">
+            Hoodies & Shirts
+        </a>
+
+        <a href="oversized.html">
+            Oversized Tees
+        </a>
+
+        <a href="bottom.html">
+            Bottom
+        </a>
+
+        <a href="footwear.html">
+            Footwear
+        </a>
+
+        <a
+            href="sale.html"
+            class="sidebar-sale"
+        >
+            Sale
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="account.html">
+
+            <i class="ri-user-3-line"></i>
+
+            My Account
+
+        </a>
+
+
+        <a href="wishlist.html">
+
+            <i class="ri-heart-line"></i>
+
+            Wishlist
+
+        </a>
+
+
+        <a href="cart.html">
+
+            <i class="ri-shopping-bag-line"></i>
+
+            Cart
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+
+
+    <!-- =====================================================
+         SALE PAGE
+    ====================================================== -->
+
+    <main class="sale-page">
+
+
+        <!-- =================================================
+             SALE HERO
+        ================================================== -->
+
+        <section
+            class="sale-hero"
+            id="saleHero"
+        >
+
+            <div class="sale-hero-inner">
+
+
+                <div class="sale-hero-content">
+
+
+                    <span
+                        class="sale-eyebrow"
+                        id="saleEyebrow"
+                    >
+                        ZM LABEL SALE
+                    </span>
+
+
+                    <h1 id="saleTitle">
+                        Up To 50% Off
+                    </h1>
+
+
+                    <p
+                        class="sale-hero-description"
+                        id="saleDescription"
+                    >
+                        Selected styles. Limited quantities.
+                        Shop our exclusive sale collection.
+                    </p>
+
+
+                    <a
+                        href="#saleProducts"
+                        class="sale-hero-btn"
+                        id="saleShopButton"
+                    >
+                        Shop Sale
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="sale-hero-meta"
+                    id="saleHeroMeta"
+                >
+
+                    <span>
+                        LIMITED TIME
+                    </span>
+
+                    <strong>
+                        SPECIAL PRICES
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COUNTDOWN
+             JS will show/hide this section depending
+             on admin settings.
+        ================================================== -->
+
+        <section
+            class="sale-countdown-section"
+            id="saleCountdownSection"
+            hidden
+        >
+
+            <div class="sale-countdown-container">
+
+
+                <div class="sale-countdown-heading">
+
+                    <span>
+                        SALE ENDS IN
+                    </span>
+
+                    <h2 id="countdownTitle">
+                        Limited Time Only
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="sale-countdown"
+                    id="saleCountdown"
+                >
+
+
+                    <div class="countdown-box">
+
+                        <strong id="countdownDays">
+                            00
+                        </strong>
+
+                        <span>
+                            Days
+                        </span>
+
+                    </div>
+
+
+                    <div class="countdown-separator">
+                        :
+                    </div>
+
+
+                    <div class="countdown-box">
+
+                        <strong id="countdownHours">
+                            00
+                        </strong>
+
+                        <span>
+                            Hours
+                        </span>
+
+                    </div>
+
+
+                    <div class="countdown-separator">
+                        :
+                    </div>
+
+
+                    <div class="countdown-box">
+
+                        <strong id="countdownMinutes">
+                            00
+                        </strong>
+
+                        <span>
+                            Minutes
+                        </span>
+
+                    </div>
+
+
+                    <div class="countdown-separator">
+                        :
+                    </div>
+
+
+                    <div class="countdown-box">
+
+                        <strong id="countdownSeconds">
+                            00
+                        </strong>
+
+                        <span>
+                            Seconds
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SALE INTRO
+        ================================================== -->
+
+        <section class="sale-intro">
+
+
+            <div class="sale-intro-left">
+
+                <span class="section-eyebrow">
+                    SALE COLLECTION
+                </span>
+
+                <h2>
+                    Exclusive Prices.
+                    <br>
+                    Same ZM LABEL Quality.
+                </h2>
+
+            </div>
+
+
+            <div class="sale-intro-right">
+
+                <p>
+                    Discover selected ZM LABEL pieces at
+                    special prices. From everyday essentials
+                    to statement styles, shop limited-time
+                    offers before they're gone.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SALE TOOLBAR
+        ================================================== -->
+
+        <section
+            class="sale-products-section"
+            id="saleProducts"
+        >
+
+
+            <div class="sale-toolbar">
+
+
+                <!-- LEFT -->
+
+                <div class="sale-result-info">
+
+                    <span
+                        class="sale-result-label"
+                        id="saleResultLabel"
+                    >
+                        SALE PRODUCTS
+                    </span>
+
+                    <span
+                        class="sale-result-count"
+                        id="saleProductCount"
+                    >
+                        0 Products
+                    </span>
+
+                </div>
+
+
+
+                <!-- RIGHT -->
+
+                <div class="sale-toolbar-actions">
+
+
+                    <!-- FILTER -->
+
+                    <button
+                        type="button"
+                        class="sale-filter-btn"
+                        id="saleFilterBtn"
+                    >
+
+                        <i class="ri-equalizer-3-line"></i>
+
+                        Filter
+
+                    </button>
+
+
+
+                    <!-- SORT -->
+
+                    <div class="sale-sort-wrapper">
+
+                        <label
+                            for="saleSort"
+                            class="sr-only"
+                        >
+                            Sort Sale Products
+                        </label>
+
+                        <select
+                            id="saleSort"
+                            class="sale-sort"
+                        >
+
+                            <option value="default">
+                                Sort By
+                            </option>
+
+                            <option value="newest">
+                                Newest
+                            </option>
+
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+
+                            <option value="discount-high">
+                                Biggest Discount
+                            </option>
+
+                            <option value="name">
+                                Name
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTER PANEL
+            ================================================== -->
+
+            <aside
+                class="sale-filter-panel"
+                id="saleFilterPanel"
+                hidden
+            >
+
+                <div class="sale-filter-header">
+
+                    <div>
+
+                        <span>
+                            FILTER
+                        </span>
+
+                        <h3>
+                            Shop Sale
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="closeSaleFilter"
+                        aria-label="Close filters"
+                    >
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- CATEGORY -->
+<div class="sale-filter-group">
+
+    <h4>
+        Category
+    </h4>
+
+
+    <label class="sale-check">
+
+        <input
+            type="checkbox"
+            name="saleCategory"
+            value="all"
+            checked
+        >
+
+        <span>
+            All
+        </span>
+
+    </label>
+
+
+    <label class="sale-check">
+
+        <input
+            type="checkbox"
+            name="saleCategory"
+            value="Hoodies&Shirts"
+        >
+
+        <span>
+            Hoodies & Shirts
+        </span>
+
+    </label>
+
+
+    <label class="sale-check">
+
+        <input
+            type="checkbox"
+            name="saleCategory"
+            value="Oversizzed-tees"
+        >
+
+        <span>
+            Oversized Tees
+        </span>
+
+    </label>
+
+
+    <label class="sale-check">
+
+        <input
+            type="checkbox"
+            name="saleCategory"
+            value="Bottom"
+        >
+
+        <span>
+            Bottom
+        </span>
+
+    </label>
+
+
+    <label class="sale-check">
+
+        <input
+            type="checkbox"
+            name="saleCategory"
+            value="Footwear"
+        >
+
+        <span>
+            Footwear
+        </span>
+
+    </label>
+
+</div>
+
+
+
+                <!-- DISCOUNT -->
+
+                <div class="sale-filter-group">
+
+                    <h4>
+                        Discount
+                    </h4>
+
+
+                    <label class="sale-check">
+
+                        <input
+                            type="checkbox"
+                            name="saleDiscount"
+                            value="10"
+                        >
+
+                        <span>
+                            10% & Above
+                        </span>
+
+                    </label>
+
+
+                    <label class="sale-check">
+
+                        <input
+                            type="checkbox"
+                            name="saleDiscount"
+                            value="20"
+                        >
+
+                        <span>
+                            20% & Above
+                        </span>
+
+                    </label>
+
+
+                    <label class="sale-check">
+
+                        <input
+                            type="checkbox"
+                            name="saleDiscount"
+                            value="30"
+                        >
+
+                        <span>
+                            30% & Above
+                        </span>
+
+                    </label>
+
+
+                    <label class="sale-check">
+
+                        <input
+                            type="checkbox"
+                            name="saleDiscount"
+                            value="50"
+                        >
+
+                        <span>
+                            50% & Above
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <div class="sale-filter-footer">
+
+                    <button
+                        type="button"
+                        id="clearSaleFilters"
+                        class="sale-clear-btn"
+                    >
+                        Clear All
+                    </button>
+
+                    <button
+                        type="button"
+                        id="applySaleFilters"
+                        class="sale-apply-btn"
+                    >
+                        Apply Filters
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 PRODUCT GRID
+            ================================================== -->
+
+            <div
+                class="sale-products-grid"
+                id="saleProductsGrid"
+            >
+
+
+                <!-- JS PRODUCT CARDS WILL LOAD HERE -->
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOADING STATE
+            ================================================== -->
+
+            <div
+                class="sale-loading"
+                id="saleLoading"
+            >
+
+                <div class="sale-loader"></div>
+
+                <p>
+                    Loading sale collection...
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div
+                class="sale-empty"
+                id="saleEmpty"
+                hidden
+            >
+
+                <div class="sale-empty-icon">
+
+                    <i class="ri-price-tag-3-line"></i>
+
+                </div>
+
+
+                <h3>
+                    No Sale Products
+                </h3>
+
+
+                <p>
+                    There are currently no products
+                    available on sale.
+                </p>
+
+
+                <a
+                    href="index.html"
+                    class="sale-empty-btn"
+                >
+                    Continue Shopping
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ERROR STATE
+            ================================================== -->
+
+            <div
+                class="sale-error"
+                id="saleError"
+                hidden
+            >
+
+                <div class="sale-error-icon">
+
+                    <i class="ri-error-warning-line"></i>
+
+                </div>
+
+
+                <h3>
+                    Something Went Wrong
+                </h3>
+
+
+                <p id="saleErrorMessage">
+                    Unable to load sale products.
+                </p>
+
+
+                <button
+                    type="button"
+                    id="retrySaleProducts"
+                    class="sale-retry-btn"
+                >
+                    Try Again
+
+                    <i class="ri-refresh-line"></i>
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SALE BENEFITS
+        ================================================== -->
+
+        <section class="sale-benefits">
+
+
+            <div class="sale-benefit">
+
+                <div class="sale-benefit-icon">
+
+                    <i class="ri-truck-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Nationwide Delivery
+                    </h4>
+
+                    <p>
+                        Delivery across Pakistan
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="sale-benefit">
+
+                <div class="sale-benefit-icon">
+
+                    <i class="ri-secure-payment-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Cash On Delivery
+                    </h4>
+
+                    <p>
+                        Pay when your order arrives
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="sale-benefit">
+
+                <div class="sale-benefit-icon">
+
+                    <i class="ri-arrow-go-back-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Easy Returns
+                    </h4>
+
+                    <p>
+                        Shop with confidence
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="sale-benefit">
+
+                <div class="sale-benefit-icon">
+
+                    <i class="ri-customer-service-2-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Customer Support
+                    </h4>
+
+                    <p>
+                        We're here to help
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SALE CTA
+        ================================================== -->
+
+        <section class="sale-bottom-cta">
+
+
+            <span>
+                ZM LABEL
+            </span>
+
+
+            <h2>
+                Don't Miss The Sale.
+            </h2>
+
+
+            <p>
+                Limited styles. Limited quantities.
+                Once they're gone, they're gone.
+            </p>
+
+
+            <a
+                href="#saleProducts"
+                class="sale-cta-btn"
+            >
+                Shop Sale
+
+                <i class="ri-arrow-right-line"></i>
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer id="footer"></footer>
+
+
+
+    <!-- =====================================================
+         SWEETALERT
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+    ></script>
+
+
+
+    <!-- =====================================================
+         GLOBAL / NAVBAR JS
+    ====================================================== -->
+
+    <script src="/navbar.js"></script>
+
+
+
+    <!-- =====================================================
+         SALE JS
+    ====================================================== -->
+
+    <script src="sale.js"></script>
+
+
+</body>
+
+</html>
