@@ -4,7 +4,7 @@
   "description": "ZM LABEL Ecommerce Backend",
   "main": "server.js",
   "engines": {
-    "node": "20.x"
+    "node": "22.x"   
   },
   "scripts": {
     "start": "node server.js",
@@ -19,7 +19,7 @@
     "mongoose": "^8.5.1",
     "multer": "^1.4.5-lts.2",
     "nodemailer": "^9.0.5",
-    "openai": "^7.4.0"
+    "openai": "^4.52.7"  
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
