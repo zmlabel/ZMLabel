@@ -7,12 +7,6 @@
 "use strict";
 
 
-/* =========================================================
-   API CONFIG
-========================================================= */
-/* =========================================================
-   API CONFIG
-========================================================= */
 const API_URL = "https://zmlabel-production.up.railway.app";
 
 const PRODUCTS_API = `${API_URL}/api/products`;
@@ -143,19 +137,17 @@ function normalizeValue(
 /* =========================================================
    SERVER ROOT
 ========================================================= */
-
 function getServerRoot() {
 
     const apiBase =
         String(
             window.ZM_API_BASE ||
-            "http://localhost:5000/api"
+            "https://zmlabel-production.up.railway.app/api"
         )
         .replace(
             /\/+$/,
             ""
         );
-
 
     if (
         apiBase.endsWith("/api")
@@ -168,11 +160,9 @@ function getServerRoot() {
 
     }
 
-
     return apiBase;
 
 }
-
 
 /* =========================================================
    IMAGE URL
