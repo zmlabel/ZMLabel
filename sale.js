@@ -10,13 +10,14 @@
 /* =========================================================
    API CONFIG
 ========================================================= */
+/* =========================================================
+   API CONFIG
+========================================================= */
 const API_URL = "https://zmlabel-production.up.railway.app";
 
-const PRODUCTS_API =
-    `${API_ROOT}/products`;
+const PRODUCTS_API = `${API_URL}/api/products`;
 
-const WISHLIST_API =
-    `${API_ROOT}/wishlist`;
+const WISHLIST_API = `${API_URL}/api/wishlist`;
 
 
 /* =========================================================

@@ -1,8 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api"
-    }
+    { "source": "/api/(.*)", "destination": "https://zmlabel-production.up.railway.app/api/$1" }
   ]
 }
