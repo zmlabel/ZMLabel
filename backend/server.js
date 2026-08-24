@@ -33,9 +33,19 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const app = express();
 
 // ==========================================
-// CONNECT DATABASE - Vercel ke liye yahan shift kiya
+// CONNECT DATABASE - Vercel ke liye lazy connect
 // ==========================================
-connectDB();
+let isConnected = false;
+const connectToDatabase = async () => {
+  if (!isConnected) {
+    await connectDB();
+    isConnected = true;
+  }
+};
+app.use(async (req, res, next) => {
+  await connectToDatabase();
+  next();
+});
 
 // ==========================================
 // MIDDLEWARE
@@ -84,7 +94,7 @@ app.use((req, res) => {
 });
 
 // ==========================================
-// GLOBAL ERROR HANDLER - chota kar diya
+// GLOBAL ERROR HANDLER
 // ==========================================
 app.use((err, req, res, next) => {
     console.error(err.message);
@@ -97,5 +107,4 @@ app.use((err, req, res, next) => {
 // ==========================================
 // SERVER
 // ==========================================
-
-module.exports = app
+module.exports = app;
