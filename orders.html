@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Orders | ZM LABEL
+    </title>
+
+
+    <!-- Remix Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+
+    <!-- Montserrat -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- NAVBAR CSS -->
+
+    <link
+        rel="stylesheet"
+        href="navbar.css">
+
+
+    <!-- ORDERS CSS -->
+
+    <link
+        rel="stylesheet"
+        href="orders.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     TOP BAR
+================================================== -->
+
+<div class="top-bar">
+
+    <p>
+        Free Shipping On Orders Above Rs.4999
+    </p>
+
+</div>
+
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+
+
+    <!-- MOBILE LEFT ACTIONS -->
+
+    <div class="mobile-left-actions">
+
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-label="Open Menu">
+
+            <i class="ri-menu-line"></i>
+
+        </button>
+
+
+        <a
+            href="shop.html"
+            class="mobile-search"
+            aria-label="Search">
+
+            <i class="ri-search-line"></i>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <a href="index.html">
+            ZM LABEL
+        </a>
+
+    </div>
+
+
+
+    <!-- DESKTOP NAV -->
+
+    <nav>
+
+        <ul>
+
+
+            <li>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="hoodies.html">
+                    Hoodies
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="oversized-tees.html">
+                    Oversized
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="bottom.html">
+                    Bottom
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="footwear.html">
+                    Footwear
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="sale.html">
+                    Sale
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- RIGHT ACTIONS -->
+
+    <div class="icons">
+
+
+        <!-- ACCOUNT -->
+
+        <a
+            href="account.html"
+            title="My Account">
+
+            <i class="ri-user-line"></i>
+
+        </a>
+
+
+
+        <!-- SEARCH -->
+
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search">
+
+            <i class="ri-search-line"></i>
+
+        </a>
+
+
+
+        <!-- WISHLIST -->
+
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist">
+
+
+            <i class="ri-heart-line"></i>
+
+
+            <span id="wishlistCount">
+                0
+            </span>
+
+
+        </a>
+
+
+
+        <!-- CART -->
+
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart">
+
+
+            <i class="ri-shopping-bag-line"></i>
+
+
+            <span id="cartCount">
+                0
+            </span>
+
+
+        </a>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- ==================================================
+     MOBILE SIDEBAR
+================================================== -->
+
+<div
+    id="overlay"
+    class="overlay">
+</div>
+
+
+
+<aside
+    id="sidebar"
+    class="mobile-sidebar">
+
+
+    <!-- SIDEBAR HEADER -->
+
+    <div class="sidebar-header">
+
+
+        <span>
+            ZM LABEL
+        </span>
+
+
+        <button
+            id="closeMenu"
+            class="close-menu"
+            aria-label="Close Menu">
+
+
+            <i class="ri-close-line"></i>
+
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- SIDEBAR NAV -->
+
+    <nav class="sidebar-nav">
+
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="hoodies.html">
+            Hoodies & Shirts
+        </a>
+
+
+        <a href="oversized.html">
+            Oversized Tees
+        </a>
+
+
+        <a href="bottom.html">
+            Bottom
+        </a>
+
+
+        <a href="footwear.html">
+            Footwear
+        </a>
+
+
+        <a
+            href="sale.html"
+            class="sidebar-sale">
+
+            Sale
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+
+        <a href="account.html">
+
+
+            <i class="ri-user-3-line"></i>
+
+
+            My Account
+
+
+        </a>
+
+
+
+        <a href="wishlist.html">
+
+
+            <i class="ri-heart-line"></i>
+
+
+            Wishlist
+
+
+        </a>
+
+
+
+        <a href="cart.html">
+
+
+            <i class="ri-shopping-bag-line"></i>
+
+
+            Cart
+
+
+        </a>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- ==================================================
+     ORDERS PAGE
+================================================== -->
+
+<main class="orders-page">
+
+
+    <!-- ==================================================
+         PAGE HEADER
+    ================================================== -->
+
+    <section class="orders-intro">
+
+
+        <div class="intro-left">
+
+
+            <span class="eyebrow">
+                ACCOUNT
+            </span>
+
+
+            <h1>
+                My Orders
+            </h1>
+
+
+            <p>
+                Track and manage your purchases.
+            </p>
+
+
+        </div>
+
+
+
+        <div
+            class="orders-count"
+            id="ordersTotal">
+
+            0 ORDERS
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ORDER FILTER / SUMMARY BAR
+    ================================================== -->
+
+    <div class="orders-toolbar">
+
+
+        <div class="toolbar-label">
+
+            <span>
+                ORDER HISTORY
+            </span>
+
+        </div>
+
+
+        <div class="toolbar-info">
+
+            <i class="ri-information-line"></i>
+
+            <span>
+                Your latest orders appear first.
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         LOADING
+    ================================================== -->
+
+    <section
+        class="orders-loading"
+        id="ordersLoading">
+
+
+        <div class="loader">
+        </div>
+
+
+        <p>
+            Loading your orders...
+        </p>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         EMPTY ORDERS
+    ================================================== -->
+
+    <section
+        class="empty-orders"
+        id="emptyOrders">
+
+
+        <div class="empty-icon">
+
+            <i class="ri-shopping-bag-line"></i>
+
+        </div>
+
+
+        <span class="empty-eyebrow">
+            YOUR ACCOUNT
+        </span>
+
+
+        <h2>
+            No orders yet
+        </h2>
+
+
+        <p>
+            Once you place an order,
+            it will appear here.
+        </p>
+
+
+        <a
+            href="index.html"
+            class="shop-btn">
+
+            START SHOPPING
+
+            <i class="ri-arrow-right-line"></i>
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ORDERS CONTAINER
+    ================================================== -->
+
+    <section
+        class="orders-container"
+        id="ordersContainer">
+
+        <!-- Orders generated by orders.js -->
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     ORDER DETAILS MODAL
+================================================== -->
+
+<div
+    class="order-modal"
+    id="orderModal">
+
+
+    <!-- OVERLAY -->
+
+    <div
+        class="modal-overlay">
+    </div>
+
+
+
+    <!-- MODAL -->
+
+    <div class="modal">
+
+
+        <!-- ==================================================
+             MODAL HEADER
+        ================================================== -->
+
+        <div class="modal-header">
+
+
+            <div>
+
+
+                <span class="modal-eyebrow">
+                    ORDER DETAILS
+                </span>
+
+
+                <h2>
+                    Your Order
+                </h2>
+
+
+            </div>
+
+
+
+            <button
+                type="button"
+                class="close-modal"
+                id="closeModal"
+                aria-label="Close">
+
+
+                <i class="ri-close-line"></i>
+
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             MODAL CONTENT
+        ================================================== -->
+
+        <div
+            class="modal-body"
+            id="modalContent">
+
+            <!-- Generated by orders.js -->
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="config.js"></script>
+<script src="/navbar.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="cart.js"></script>
+
+<script src="wishlist.js"></script>
+
+<script src="orders.js"></script>
+
+
+</body>
+
+</html>

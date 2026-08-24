@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Order Confirmed | ZM LABEL</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="favicon.ico"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="order-success.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     PAGE
+========================================== -->
+
+<main class="success-page">
+
+
+    <!-- ======================================
+         BRAND
+    ======================================= -->
+
+    <header class="success-header">
+
+        <a href="index.html" class="brand">
+
+            <span class="brand-mark">ZM</span>
+
+            <span class="brand-name">
+                ZM LABEL
+            </span>
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ======================================
+         SUCCESS HERO
+    ======================================= -->
+
+    <section class="success-hero">
+
+
+        <div class="success-icon">
+
+            <div class="success-icon-ring">
+
+                <i class="ri-check-line"></i>
+
+            </div>
+
+        </div>
+
+
+        <span class="eyebrow">
+            ORDER CONFIRMED
+        </span>
+
+
+        <h1>
+            Thank you for your order.
+        </h1>
+
+
+        <p class="success-message">
+
+            Your order has been successfully placed.
+            We have received your order and will begin
+            preparing it shortly.
+
+        </p>
+
+
+        <!-- ORDER ID -->
+
+        <div class="order-id-card">
+
+            <span>
+                ORDER NUMBER
+            </span>
+
+            <strong id="orderId">
+                ZM-000000
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         ORDER PROGRESS
+    ======================================= -->
+
+    <section class="order-progress">
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step active">
+
+            <div class="progress-icon">
+
+                <i class="ri-check-line"></i>
+
+            </div>
+
+            <span>
+                Order Placed
+            </span>
+
+        </div>
+
+
+        <div class="progress-step">
+
+            <div class="progress-icon">
+
+                <i class="ri-loader-4-line"></i>
+
+            </div>
+
+            <span>
+                Processing
+            </span>
+
+        </div>
+
+
+        <div class="progress-step">
+
+            <div class="progress-icon">
+
+                <i class="ri-truck-line"></i>
+
+            </div>
+
+            <span>
+                Shipped
+            </span>
+
+        </div>
+
+
+        <div class="progress-step">
+
+            <div class="progress-icon">
+
+                <i class="ri-home-5-line"></i>
+
+            </div>
+
+            <span>
+                Delivered
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         MAIN ORDER CONTENT
+    ======================================= -->
+
+    <section class="order-content">
+
+
+        <!-- ==================================
+             ORDER SUMMARY
+        =================================== -->
+
+        <div class="order-card">
+
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-eyebrow">
+                        YOUR PURCHASE
+                    </span>
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="item-count"
+                    id="itemCount"
+                >
+                    0 Items
+                </span>
+
+            </div>
+
+
+            <div
+                class="products-list"
+                id="productsList"
+            >
+
+                <!-- Products injected by JS -->
+
+            </div>
+
+
+            <div class="price-summary">
+
+
+                <div class="price-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="subtotal">
+                        Rs. 0
+                    </strong>
+
+                </div>
+
+
+                <div class="price-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong id="delivery">
+                        Rs. 0
+                    </strong>
+
+                </div>
+
+
+                <div class="price-divider"></div>
+
+
+                <div class="price-row total-row">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="total">
+                        Rs. 0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================
+             DELIVERY CARD
+        =================================== -->
+
+        <div class="details-card">
+
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-eyebrow">
+                        DELIVERY
+                    </span>
+
+                    <h2>
+                        Delivery Details
+                    </h2>
+
+                </div>
+
+                <i class="ri-map-pin-line heading-icon"></i>
+
+            </div>
+
+
+            <div class="detail-list">
+
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+
+                        <i class="ri-map-pin-2-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            SHIPPING ADDRESS
+                        </span>
+
+                        <strong id="address">
+                            —
+                        </strong>
+
+                        <small id="city">
+                            —
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+
+                        <i class="ri-phone-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PHONE
+                        </span>
+
+                        <strong id="phone">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+
+                        <i class="ri-bank-card-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PAYMENT METHOD
+                        </span>
+
+                        <strong id="paymentMethod">
+                            —
+                        </strong>
+
+                        <small id="paymentStatus">
+                            Payment Pending
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="delivery-note">
+
+                <i class="ri-information-line"></i>
+
+                <p>
+                    You will receive an email confirmation
+                    with your order details shortly.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         ESTIMATED DELIVERY
+    ======================================= -->
+
+    <section class="delivery-banner">
+
+        <div class="delivery-banner-icon">
+
+            <i class="ri-truck-line"></i>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                ESTIMATED DELIVERY
+            </span>
+
+            <strong>
+                3 – 5 Business Days
+            </strong>
+
+        </div>
+
+
+        <div class="delivery-banner-arrow">
+
+            <i class="ri-arrow-right-line"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         ACTIONS
+    ======================================= -->
+
+    <section class="success-actions">
+
+
+        <a
+            href="orders.html"
+            class="track-btn"
+        >
+
+            <span>
+                Track My Order
+            </span>
+
+            <i class="ri-arrow-right-up-line"></i>
+
+        </a>
+
+
+        <a
+            href="index.html"
+            class="continue-btn"
+        >
+
+            <i class="ri-arrow-left-line"></i>
+
+            <span>
+                Continue Shopping
+            </span>
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         FOOTER MESSAGE
+    ======================================= -->
+
+    <footer class="success-footer">
+
+        <div class="footer-line"></div>
+
+        <p>
+            Thank you for choosing
+            <strong>ZM LABEL</strong>.
+        </p>
+
+        <span>
+            Designed for your everyday style.
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="order-success.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Payment | ZM LABEL</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="favicon.ico"
+    >
+<link
+        rel="stylesheet"
+        href="navbar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="payment.css"
+    >
+
+    
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="top-bar">
+    Free Shipping On Orders Above Rs.4999
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="mobile-left-actions">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            type="button"
+            aria-label="Open Menu"
+        >
+
+            <i class="ri-menu-line"></i>
+
+        </button>
+
+
+        <a
+            href="shop.html"
+            class="mobile-search"
+            aria-label="Search"
+        >
+
+            <i class="ri-search-line"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="logo">
+
+        <a href="index.html">
+            ZM LABEL
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html">
+                    Shop
+                </a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+                    Hoodies
+                </a>
+            </li>
+
+            <li>
+                <a href="oversized-tees.html">
+                    Oversized
+                </a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <div class="icons">
+
+        <a
+            href="account.html"
+            title="My Account"
+        >
+            <i class="ri-user-line"></i>
+        </a>
+
+
+        <a
+            href="shop.html"
+            class="desktop-search"
+            title="Search"
+        >
+            <i class="ri-search-line"></i>
+        </a>
+
+
+        <a
+            href="wishlist.html"
+            class="wishlist-icon"
+            title="Wishlist"
+        >
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">
+                0
+            </span>
+
+        </a>
+
+
+        <a
+            href="cart.html"
+            class="cart-icon"
+            title="Cart"
+        >
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PAYMENT PAGE
+========================================================= -->
+
+<main class="payment-page">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="payment-heading">
+
+        <span>
+            ZM LABEL
+        </span>
+
+        <h1>
+            Secure Payment
+        </h1>
+
+        <p>
+            Pay your Rs.300 delivery advance to continue.
+        </p>
+
+    </section>
+
+
+
+    <!-- PAYMENT LAYOUT -->
+
+    <div class="payment-layout">
+
+
+        <!-- =================================================
+             LEFT
+        ================================================= -->
+
+        <section class="payment-main">
+
+
+            <!-- STEP -->
+
+            <div class="payment-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h2>
+                        Delivery Advance
+                    </h2>
+
+                    <p>
+                        A Rs.300 delivery advance is required
+                        before your order is processed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AMOUNT CARD -->
+
+            <div class="advance-card">
+
+                <div class="advance-icon">
+
+                    <i class="ri-truck-line"></i>
+
+                </div>
+
+                <div class="advance-info">
+
+                    <span>
+                        Delivery Advance
+                    </span>
+
+                    <strong id="advanceAmount">
+                        Rs. 300
+                    </strong>
+
+                </div>
+
+                <div class="advance-status">
+
+                    <i class="ri-shield-check-line"></i>
+
+                    Secure
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PAYMENT METHODS -->
+
+            <div class="payment-method-section">
+
+                <div class="section-heading">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Choose Payment Method
+                        </h2>
+
+                        <p>
+                            Select how you want to pay the
+                            delivery advance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="payment-methods">
+
+
+                    <!-- EASYPAISA -->
+
+                    <label class="method-card">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Easypaisa"
+                        >
+
+                        <div class="method-icon easypaisa-icon">
+
+                            <i class="ri-smartphone-line"></i>
+
+                        </div>
+
+                        <div class="method-content">
+
+                            <strong>
+                                Easypaisa
+                            </strong>
+
+                            <span>
+                                Pay using Easypaisa
+                            </span>
+
+                        </div>
+
+                        <div class="method-check">
+
+                            <i class="ri-check-line"></i>
+
+                        </div>
+
+                    </label>
+
+
+
+                    <!-- JAZZCASH -->
+
+                    <label class="method-card">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="JazzCash"
+                        >
+
+                        <div class="method-icon jazzcash-icon">
+
+                            <i class="ri-wallet-3-line"></i>
+
+                        </div>
+
+                        <div class="method-content">
+
+                            <strong>
+                                JazzCash
+                            </strong>
+
+                            <span>
+                                Pay using JazzCash
+                            </span>
+
+                        </div>
+
+                        <div class="method-check">
+
+                            <i class="ri-check-line"></i>
+
+                        </div>
+
+                    </label>
+
+
+
+                    <!-- CARD -->
+
+                    <label class="method-card">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Credit Card"
+                        >
+
+                        <div class="method-icon card-icon">
+
+                            <i class="ri-bank-card-line"></i>
+
+                        </div>
+
+                        <div class="method-content">
+
+                            <strong>
+                                Credit / Debit Card
+                            </strong>
+
+                            <span>
+                                Secure card payment
+                            </span>
+
+                        </div>
+
+                        <div class="method-check">
+
+                            <i class="ri-check-line"></i>
+
+                        </div>
+
+                    </label>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAYMENT DETAILS
+            ================================================= -->
+
+            <div
+                id="paymentDetails"
+                class="payment-details"
+            >
+
+                <div class="details-placeholder">
+
+                    <i class="ri-lock-2-line"></i>
+
+                    <h3>
+                        Select a payment method
+                    </h3>
+
+                    <p>
+                        Your payment instructions will
+                        appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECURITY
+            ================================================= -->
+
+            <div class="security-box">
+
+                <i class="ri-shield-check-line"></i>
+
+                <div>
+
+                    <strong>
+                        Secure Payment
+                    </strong>
+
+                    <p>
+                        Your payment information is protected
+                        and securely processed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SUMMARY
+        ================================================= -->
+
+        <aside class="payment-summary">
+
+
+            <div class="summary-top">
+
+                <span>
+                    03
+                </span>
+
+                <h2>
+                    Order Summary
+                </h2>
+
+            </div>
+
+
+
+            <!-- PRODUCTS -->
+
+            <div
+                id="paymentItems"
+                class="payment-items"
+            >
+
+                <div class="loading">
+                    Loading order...
+                </div>
+
+            </div>
+
+
+
+            <!-- LINES -->
+
+            <div class="summary-lines">
+
+                <div>
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="summarySubtotal">
+                        Rs. 0
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="summaryDiscountRow"
+                    class="discount-row"
+                    style="display:none;"
+                >
+
+                    <span>
+                        Discount
+                    </span>
+
+                    <strong id="summaryDiscount">
+                        - Rs. 0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong>
+                        Rs. 300
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="summaryTotal">
+                    Rs. 300
+                </strong>
+
+            </div>
+
+
+
+            <!-- PAY BUTTON -->
+
+            <button
+                type="button"
+                id="payNowBtn"
+                class="pay-now-btn"
+                disabled
+            >
+
+                <span>
+                    Select Payment Method
+                </span>
+
+                <i class="ri-lock-line"></i>
+
+            </button>
+
+
+
+            <!-- BACK -->
+
+            <button
+                type="button"
+                id="backCheckoutBtn"
+                class="back-checkout-btn"
+            >
+
+                <i class="ri-arrow-left-line"></i>
+
+                Back to Checkout
+
+            </button>
+
+
+
+            <div class="summary-security">
+
+                <i class="ri-shield-check-line"></i>
+
+                <span>
+                    Secure checkout
+                </span>
+
+            </div>
+
+
+        </aside>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     PROCESSING MODAL
+========================================================= -->
+
+<div
+    id="paymentProcessing"
+    class="payment-modal"
+>
+
+    <div class="modal-box">
+
+        <div class="loader-circle">
+
+            <i class="ri-loader-4-line"></i>
+
+        </div>
+
+        <h3>
+            Processing Payment
+        </h3>
+
+        <p>
+            Please don't close this page.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SUCCESS MODAL
+========================================================= -->
+
+<div
+    id="paymentSuccess"
+    class="payment-modal"
+>
+
+    <div class="modal-box success-modal">
+
+        <div class="success-icon">
+
+            <i class="ri-check-line"></i>
+
+        </div>
+
+        <h3>
+            Payment Successful
+        </h3>
+
+        <p>
+            Your delivery advance has been received.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="paymentToast"
+    class="payment-toast"
+></div>
+
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="config.js"></script>
+
+<script src="/navbar.js"></script>
+
+<script src="cart.js"></script>
+
+<script src="wishlist.js"></script>
+
+<script src="payment.js"></script>
+
+
+</body>
+
+</html>

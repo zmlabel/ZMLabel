@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | ZM LABEL</title>
+
+    <link rel="stylesheet"
+          href="account.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+</head>
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<div class="top-bar">
+
+    Free Shipping On Orders Above Rs.4999
+
+</div>
+
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <a href="index.html">
+            ZM LABEL
+        </a>
+
+    </div>
+
+
+    <nav class="nav">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="hoodies.html">
+                    Hoodies & Shirts
+                </a>
+            </li>
+
+            <li>
+                <a href="oversized.html">
+                    Oversized Tees
+                </a>
+            </li>
+
+            <li>
+                <a href="bottom.html">
+                    Bottom
+                </a>
+            </li>
+
+            <li>
+                <a href="footwear.html">
+                    Footwear
+                </a>
+            </li>
+
+            <li>
+                <a href="sale.html">
+                    Sale
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HEADER ICONS -->
+
+    <div class="header-icons">
+
+        <a href="account.html"
+           class="account-icon"
+           title="My Account">
+
+            <i class="ri-user-3-line"></i>
+
+        </a>
+
+
+        <a href="wishlist.html"
+           class="wishlist-icon"
+           title="Wishlist">
+
+            <i class="ri-heart-line"></i>
+
+            <span id="wishlistCount">
+                0
+            </span>
+
+        </a>
+
+
+        <a href="cart.html"
+           class="cart-icon"
+           title="Cart">
+
+            <i class="ri-shopping-bag-line"></i>
+
+            <span id="cartCount">
+                0
+            </span>
+
+        </a>
+
+
+        <button id="menuBtn"
+                class="menu-btn"
+                aria-label="Open Menu">
+
+            <i class="ri-menu-line"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MOBILE MENU
+========================================== -->
+
+<div id="mobileMenu"
+     class="mobile-menu">
+
+    <button id="closeMenu"
+            class="close-menu">
+
+        <i class="ri-close-line"></i>
+
+    </button>
+
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="hoodies.html">
+        Hoodies & Shirts
+    </a>
+
+    <a href="oversized.html">
+        Oversized Tees
+    </a>
+
+    <a href="bottom.html">
+        Bottom
+    </a>
+
+    <a href="footwear.html">
+        Footwear
+    </a>
+
+    <a href="sale.html">
+        Sale
+    </a>
+
+</div>
+
+
+
+<!-- ==========================================
+     ACCOUNT PAGE
+========================================== -->
+
+<main class="account-page">
+
+
+    <!-- ACCOUNT HERO -->
+
+    <section class="account-hero">
+
+        <p class="account-label">
+            ZM LABEL
+        </p>
+
+        <h1>
+            My Account
+        </h1>
+
+        <p>
+            Manage your profile, orders and preferences.
+        </p>
+
+    </section>
+
+
+
+    <!-- ACCOUNT CONTENT -->
+
+    <section class="account-wrapper">
+
+
+        <!-- ======================================
+             SIDEBAR
+        ======================================= -->
+
+        <aside class="account-sidebar">
+
+
+            <div class="user-mini">
+
+                <div class="user-avatar">
+
+                    <i class="ri-user-3-line"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3 id="sidebarName">
+                        Loading...
+                    </h3>
+
+                    <p id="sidebarEmail">
+                        Loading...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="account-menu">
+
+                <button class="account-menu-btn active"
+                        data-section="profile">
+
+                    <i class="ri-user-line"></i>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </button>
+
+
+                <button class="account-menu-btn"
+                        data-section="orders">
+
+                    <i class="ri-shopping-bag-3-line"></i>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                </button>
+
+
+                <button class="account-menu-btn"
+                        data-section="wishlist">
+
+                    <i class="ri-heart-line"></i>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                </button>
+
+
+                <button class="account-menu-btn"
+                        data-section="cart">
+
+                    <i class="ri-shopping-cart-line"></i>
+
+                    <span>
+                        My Cart
+                    </span>
+
+                </button>
+
+
+                <button id="logoutBtn"
+                        class="account-menu-btn logout-btn">
+
+                    <i class="ri-logout-box-r-line"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ======================================
+             MAIN ACCOUNT AREA
+        ======================================= -->
+
+        <div class="account-content">
+
+
+            <!-- ==================================
+                 PROFILE SECTION
+            =================================== -->
+
+            <section id="profileSection"
+                     class="account-section active">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p>
+                            ACCOUNT
+                        </p>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+                    </div>
+
+                    <i class="ri-user-settings-line"></i>
+
+                </div>
+
+
+
+                <!-- PROFILE FORM -->
+
+                <form id="profileForm"
+                      class="profile-form">
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Your email"
+                                readonly
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="03XX XXXXXXX"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="Your city"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="Complete delivery address"
+                            rows="5"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="profile-actions">
+
+                        <button
+                            type="submit"
+                            class="save-btn">
+
+                            <i class="ri-save-line"></i>
+
+                            Save Changes
+
+                        </button>
+
+
+                        <span id="profileMessage"
+                              class="profile-message">
+                        </span>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 ORDERS SECTION
+            =================================== -->
+
+            <section id="ordersSection"
+                     class="account-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p>
+                            ACCOUNT
+                        </p>
+
+                        <h2>
+                            My Orders
+                        </h2>
+
+                    </div>
+
+                    <i class="ri-shopping-bag-3-line"></i>
+
+                </div>
+
+
+                <div id="ordersContainer"
+                     class="orders-container">
+
+                    <div class="section-loading">
+
+                        Loading orders...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 WISHLIST SECTION
+            =================================== -->
+
+            <section id="wishlistSection"
+                     class="account-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p>
+                            ACCOUNT
+                        </p>
+
+                        <h2>
+                            My Wishlist
+                        </h2>
+
+                    </div>
+
+                    <i class="ri-heart-line"></i>
+
+                </div>
+
+
+                <div id="wishlistContainer"
+                     class="account-products">
+
+                    <div class="section-loading">
+
+                        Loading wishlist...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 CART SECTION
+            =================================== -->
+
+            <section id="cartSection"
+                     class="account-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p>
+                            ACCOUNT
+                        </p>
+
+                        <h2>
+                            My Cart
+                        </h2>
+
+                    </div>
+
+                    <i class="ri-shopping-cart-line"></i>
+
+                </div>
+
+
+                <div class="cart-account-box">
+
+
+                    <div>
+
+                        <p>
+                            Items in your cart
+                        </p>
+
+                        <strong id="accountCartCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <a href="cart.html"
+                       class="account-cart-btn">
+
+                        View Cart
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                ZM LABEL
+            </h3>
+
+            <p>
+                Modern essentials designed for
+                everyday confidence.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="hoodies.html">
+                Hoodies & Shirts
+            </a>
+
+            <a href="oversized.html">
+                Oversized Tees
+            </a>
+
+            <a href="bottom.html">
+                Bottom
+            </a>
+
+            <a href="footwear.html">
+                Footwear
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Help
+            </h3>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+            <a href="#">
+                Shipping
+            </a>
+
+            <a href="#">
+                Returns
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Account
+            </h3>
+
+            <a href="account.html">
+                My Account
+            </a>
+
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 ZM LABEL. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==========================================
+     TOAST
+========================================== -->
+
+<div id="toast"
+     class="toast">
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="config.js"></script>
+<script src="cart.js"></script>
+<script src="wishlist.js"></script>
+<script src="main.js"></script>
+<script src="/navbar.js"></script>
+<script src="auth.js"></script>
+<script src="account.js"></script>
+
+</body>
+
+</html>

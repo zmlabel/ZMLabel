@@ -1,0 +1,3844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ZM LABEL | Admin Studio</title>
+
+    <!-- Remix Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Admin CSS -->
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-top">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    ZM
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        ZM LABEL
+                    </strong>
+
+                    <span>
+                        ADMIN STUDIO
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="mobile-close"
+                id="closeSidebar"
+                aria-label="Close sidebar"
+                style="display:none;"
+            ></button>
+
+        </div>
+
+
+        <div class="menu-title">
+            MAIN MENU
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+
+            <button
+                type="button"
+                class="nav-item active"
+                data-page="dashboard"
+            >
+
+                <i class="ri-dashboard-line"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="products"
+            >
+
+                <i class="ri-shopping-bag-3-line"></i>
+
+                <span>
+                    Products
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="add-product"
+            >
+
+                <i class="ri-add-circle-line"></i>
+
+                <span>
+                    Add Product
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="orders"
+            >
+
+                <i class="ri-file-list-3-line"></i>
+
+                <span>
+                    Orders
+                </span>
+
+                <span
+                    class="nav-badge"
+                    id="sidebarOrderCount"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="customers"
+            >
+
+                <i class="ri-group-line"></i>
+
+                <span>
+                    Customers
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <div class="menu-title">
+            MANAGEMENT
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="analytics"
+            >
+
+                <i class="ri-bar-chart-box-line"></i>
+
+                <span>
+                    Analytics
+                </span>
+
+            </button>
+
+
+            <!-- COUPONS -->
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="coupons"
+            >
+
+                <i class="ri-coupon-3-line"></i>
+
+                <span>
+                    Coupons
+                </span>
+
+                <span
+                    class="nav-badge"
+                    id="couponCount"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="homepage"
+            >
+
+                <i class="ri-home-5-line"></i>
+
+                <span>
+                    Homepage
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-page="settings"
+            >
+
+                <i class="ri-settings-3-line"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                ZM
+            </div>
+
+            <div class="user-info">
+
+                <strong>
+                    ZM Admin
+                </strong>
+
+                <span>
+                    Store Manager
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="user-more"
+                id="userMoreBtn"
+            >
+
+                <i class="ri-more-2-fill"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="sidebar-user-menu"
+            id="sidebarUserMenu"
+        >
+
+            <button
+                type="button"
+                id="logoutBtn"
+            >
+
+                <i class="ri-logout-box-r-line"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="main-area">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                >
+
+                    <i class="ri-menu-line"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <span>
+                        ZM LABEL
+                    </span>
+
+                    <strong id="breadcrumbCurrent">
+                        Dashboard
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GLOBAL SEARCH -->
+
+            <div class="global-search">
+
+                <i class="ri-search-line"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search products or orders..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="searchButton"
+                >
+
+                    <i class="ri-search-line"></i>
+
+                </button>
+
+
+                <div
+                    class="search-results"
+                    id="searchResults"
+                ></div>
+
+            </div>
+
+
+
+            <!-- TOP RIGHT -->
+
+            <div class="topbar-right">
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="icon-button"
+                        id="notificationBtn"
+                    >
+
+                        <i class="ri-notification-3-line"></i>
+
+                        <span
+                            class="notification-count"
+                            id="notificationCount"
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-panel"
+                        id="notificationPanel"
+                    >
+
+                        <div class="panel-header">
+
+                            <strong>
+                                Notifications
+                            </strong>
+
+                            <button
+                                type="button"
+                                id="clearNotifications"
+                            >
+                                Clear
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="notificationList"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROFILE -->
+
+                <div class="profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+
+                        <div class="profile-avatar">
+                            ZM
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>
+                                ZM Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <div class="profile-dropdown-head">
+
+                            <div class="profile-avatar large">
+                                ZM
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ZM Admin
+                                </strong>
+
+                                <span>
+                                    Administrator
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="dropdown-link"
+                            data-page="settings"
+                        >
+
+                            <i class="ri-settings-3-line"></i>
+
+                            Settings
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="dropdown-link logout-link"
+                            id="profileLogout"
+                        >
+
+                            <i class="ri-logout-box-r-line"></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             ALL SECTIONS
+        ====================================================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section
+                class="page-section active"
+                id="dashboardSection"
+            >
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            OVERVIEW
+                        </span>
+
+                        <h1>
+                            Dashboard
+                        </h1>
+
+                        <p>
+                            Welcome back. Here's what's happening with your store today.
+                        </p>
+
+                    </div>
+
+
+                    <div class="heading-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="refreshBtn"
+                        >
+
+                            <i class="ri-refresh-line"></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATS -->
+
+                <div class="stats-grid">
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon black">
+
+                                <i class="ri-shopping-bag-3-line"></i>
+
+                            </div>
+
+                            <div class="stat-title">
+                                Products
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-middle">
+
+                            <strong id="productsCount">
+                                0
+                            </strong>
+
+                            <span class="growth positive">
+
+                                ↑
+
+                                <span id="productsGrowth">
+                                    0
+                                </span>%
+
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Total products
+                        </p>
+
+
+                        <div class="mini-chart">
+
+                            <canvas
+                                id="productsMiniChart"
+                            ></canvas>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon gold">
+
+                                <i class="ri-file-list-3-line"></i>
+
+                            </div>
+
+                            <div class="stat-title">
+                                Orders
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-middle">
+
+                            <strong id="ordersCount">
+                                0
+                            </strong>
+
+                            <span class="growth positive">
+
+                                ↑
+
+                                <span id="ordersGrowth">
+                                    0
+                                </span>%
+
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Customer orders
+                        </p>
+
+
+                        <div class="mini-chart">
+
+                            <canvas
+                                id="ordersMiniChart"
+                            ></canvas>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon light">
+
+                                <i class="ri-group-line"></i>
+
+                            </div>
+
+                            <div class="stat-title">
+                                Customers
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-middle">
+
+                            <strong id="customersCount">
+                                0
+                            </strong>
+
+                            <span class="growth positive">
+
+                                ↑
+
+                                <span id="customersGrowth">
+                                    0
+                                </span>%
+
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Registered users
+                        </p>
+
+
+                        <div class="mini-chart">
+
+                            <canvas
+                                id="customersMiniChart"
+                            ></canvas>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon green">
+
+                                <i class="ri-money-dollar-circle-line"></i>
+
+                            </div>
+
+                            <div class="stat-title">
+                                Revenue
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-middle">
+
+                            <strong id="revenueCount">
+                                Rs. 0
+                            </strong>
+
+                            <span class="growth positive">
+
+                                ↑
+
+                                <span id="revenueGrowth">
+                                    0
+                                </span>%
+
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Total sales
+                        </p>
+
+
+                        <div class="mini-chart">
+
+                            <canvas
+                                id="revenueMiniChart"
+                            ></canvas>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- DASHBOARD CHARTS -->
+
+                <div class="dashboard-grid">
+
+
+                    <section class="dashboard-card sales-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    PERFORMANCE
+                                </span>
+
+                                <h2>
+                                    Sales Overview
+                                </h2>
+
+                            </div>
+
+
+                            <select
+                                id="salesPeriod"
+                                class="period-select"
+                            >
+
+                                <option value="week">
+                                    This Week
+                                </option>
+
+                                <option value="month">
+                                    This Month
+                                </option>
+
+                                <option value="year">
+                                    This Year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="sales-chart-wrap">
+
+                            <canvas
+                                id="salesChart"
+                            ></canvas>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <section class="dashboard-card status-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    ORDERS
+                                </span>
+
+                                <h2>
+                                    Order Status
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="status-content">
+
+                            <div class="donut-wrapper">
+
+                                <canvas
+                                    id="orderStatusChart"
+                                ></canvas>
+
+                                <div class="donut-center">
+
+                                    <strong id="statusTotal">
+                                        0
+                                    </strong>
+
+                                    <span>
+                                        Total Orders
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="status-list"
+                                id="statusList"
+                            ></div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+                <div class="bottom-grid">
+
+
+                    <section class="dashboard-card orders-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    LATEST
+                                </span>
+
+                                <h2>
+                                    Recent Orders
+                                </h2>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="small-button"
+                                id="viewOrdersBtn"
+                            >
+                                View All
+                            </button>
+
+                        </div>
+
+
+                        <div class="orders-table-wrap">
+
+                            <table class="orders-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>CUSTOMER</th>
+                                        <th>CITY</th>
+                                        <th>TOTAL</th>
+                                        <th>STATUS</th>
+                                        <th>DATE</th>
+                                        <th>ACTION</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody
+                                    id="recentOrdersBody"
+                                ></tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <section class="dashboard-card stock-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    INVENTORY
+                                </span>
+
+                                <h2>
+                                    Low Stock Products
+                                </h2>
+
+                            </div>
+
+
+                            <span class="stock-limit">
+                                ≤ 5 units
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="stock-list"
+                            id="lowStockList"
+                        ></div>
+
+
+                        <button
+                            type="button"
+                            class="view-products-button"
+                            id="viewProductsBtn"
+                        >
+
+                            View All Products
+
+                            <i class="ri-arrow-right-up-line"></i>
+
+                        </button>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PRODUCTS
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="productsSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CATALOG
+                        </span>
+
+                        <h1>
+                            Products
+                        </h1>
+
+                        <p>
+                            Manage all products in your store.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="productsAddBtn"
+                    >
+
+                        <i class="ri-add-line"></i>
+
+                        Add Product
+
+                    </button>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                INVENTORY
+                            </span>
+
+                            <h3>
+                                All Products
+                            </h3>
+
+                        </div>
+
+
+                        <input
+                            type="text"
+                            id="productSearch"
+                            class="table-search"
+                            placeholder="Search products..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>PRODUCT</th>
+                                    <th>BRAND</th>
+                                    <th>CATEGORY</th>
+                                    <th>PRICE</th>
+                                    <th>STOCK</th>
+                                    <th>STATUS</th>
+                                    <th>ACTION</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="productsList"
+                            ></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ADD PRODUCT
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="addProductSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CATALOG MANAGEMENT
+                        </span>
+
+                        <h1>
+                            Add Product
+                        </h1>
+
+                        <p>
+                            Add a new product to your ZM LABEL store.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    id="productForm"
+                    class="product-form"
+                    enctype="multipart/form-data"
+                >
+
+
+                    <div class="form-grid">
+
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-kicker">
+                                        BASIC INFORMATION
+                                    </span>
+
+                                    <h3>
+                                        Product Details
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-fields">
+
+
+                                <div class="form-group">
+
+                                    <label for="productName">
+                                        Product Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="productName"
+                                        name="name"
+                                        required
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productBrand">
+                                        Brand
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="productBrand"
+                                        name="brand"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+
+
+                                <!-- FIXED MAIN CATEGORIES -->
+
+                               <div class="form-group">
+
+    <label for="productCategory">
+        Category
+    </label>
+
+    <select
+        id="productCategory"
+        name="category"
+        required
+    >
+
+        <option value="">
+            Select Category
+        </option>
+
+        <option value="Hoodies & Shirts">
+            Hoodies & Shirts
+        </option>
+
+        <option value="Oversized Tees">
+            Oversized Tees
+        </option>
+
+        <option value="Bottom">
+            Bottom
+        </option>
+
+        <option value="Footwear">
+            Footwear
+        </option>
+
+        <option value="Homepage">
+            Homepage
+        </option>
+
+        <option value="SALE">
+            SALE
+        </option>
+
+    </select>
+
+</div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productSubCategory">
+                                        Sub Category
+                                    </label>
+
+                                    <select
+                                        id="productSubCategory"
+                                        name="subCategory"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select Category First
+                                        </option>
+
+                                    </select>
+
+
+                                    <small
+                                        id="subCategoryHelp"
+                                        class="field-help"
+                                    >
+                                        Select a category to load its sub-categories.
+                                    </small>
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productDescription">
+                                        Description
+                                    </label>
+
+                                    <textarea
+                                        id="productDescription"
+                                        name="description"
+                                        rows="5"
+                                        required
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-kicker">
+                                        PRICING & INVENTORY
+                                    </span>
+
+                                    <h3>
+                                        Product Settings
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-fields">
+
+
+                                <div class="form-group">
+
+                                    <label for="productPrice">
+                                        Price
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="productPrice"
+                                        name="price"
+                                        min="0"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productDiscount">
+                                        Discount %
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="productDiscount"
+                                        name="discount"
+                                        min="0"
+                                        max="100"
+                                        value="0"
+                                    >
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productStock">
+                                        Stock
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="productStock"
+                                        name="stock"
+                                        min="0"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productBadge">
+                                        Badge
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="productBadge"
+                                        name="badge"
+                                        placeholder="NEW / SALE"
+                                    >
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productStatus">
+                                        Status
+                                    </label>
+
+                                    <select
+                                        id="productStatus"
+                                        name="status"
+                                    >
+
+                                        <option value="Active">
+                                            Active
+                                        </option>
+
+                                        <option value="Draft">
+                                            Draft
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+
+                                <div class="check-row">
+
+
+                                    <label class="check-box">
+
+                                        <input
+                                            type="checkbox"
+                                            id="productFeatured"
+                                            name="featured"
+                                        >
+
+                                        <span>
+                                            Featured Product
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="check-box">
+
+                                        <input
+                                            type="checkbox"
+                                            id="productShowOnHome"
+                                            name="showOnHome"
+                                        >
+
+                                        <span>
+                                            Show On Homepage
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HOMEPAGE PLACEMENT -->
+
+                    <div class="panel homepage-placement-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    HOMEPAGE CONTROL
+                                </span>
+
+                                <h3>
+                                    Homepage Placement
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="homepage-placement-grid">
+
+
+                            <label class="placement-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="productSelectedForYou"
+                                    name="selectedForYou"
+                                >
+
+                                <span class="placement-option-content">
+
+                                    <i class="ri-sparkling-2-line"></i>
+
+                                    <strong>
+                                        Selected For You
+                                    </strong>
+
+                                    <small>
+                                        Show this product in the selected-for-you section.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="placement-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="productLatestCollection"
+                                    name="latestCollection"
+                                >
+
+                                <span class="placement-option-content">
+
+                                    <i class="ri-fire-line"></i>
+
+                                    <strong>
+                                        Latest Collection
+                                    </strong>
+
+                                    <small>
+                                        Show this product in the latest collection.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="placement-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="productSale"
+                                    name="sale"
+                                >
+
+                                <span class="placement-option-content">
+
+                                    <i class="ri-price-tag-3-line"></i>
+
+                                    <strong>
+                                        Sale
+                                    </strong>
+
+                                    <small>
+                                        Show this product in the sale section.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-kicker">
+                                        VARIANTS
+                                    </span>
+
+                                    <h3>
+                                        Colors & Sizes
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-fields">
+
+
+                                <div class="form-group">
+
+                                    <label for="productColors">
+                                        Colors
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="productColors"
+                                        name="colors"
+                                        placeholder="Black, White, Blue"
+                                    >
+
+                                    <small>
+                                        Separate colors with commas.
+                                    </small>
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="productSizes">
+                                        Sizes
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="productSizes"
+                                        name="sizes"
+                                        placeholder="S, M, L, XL"
+                                    >
+
+                                    <small>
+                                        Separate sizes with commas.
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-kicker">
+                                        PRODUCT IMAGES
+                                    </span>
+
+                                    <h3>
+                                        Upload Images
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-fields">
+
+                                <div class="image-upload">
+
+                                    <input
+                                        type="file"
+                                        id="productImage"
+                                        name="images"
+                                        accept="image/*"
+                                        multiple
+                                    >
+
+
+                                    <label
+                                        for="productImage"
+                                        class="upload-box"
+                                    >
+
+                                        <i class="ri-image-add-line"></i>
+
+                                        <strong>
+                                            Choose Product Images
+                                        </strong>
+
+                                        <span>
+                                            JPG, JPEG, PNG or WEBP
+                                        </span>
+
+                                        <small>
+                                            You can select multiple images
+                                        </small>
+
+                                    </label>
+
+
+                                    <div
+                                        id="imagePreview"
+                                        class="image-preview"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelProductBtn"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="saveProductBtn"
+                        >
+
+                            <i class="ri-save-line"></i>
+
+                            Save Product
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ORDERS
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="ordersSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SALES MANAGEMENT
+                        </span>
+
+                        <h1>
+                            Orders
+                        </h1>
+
+                        <p>
+                            View, manage and update customer orders.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="order-summary-grid">
+
+
+                    <div class="order-summary-card">
+
+                        <div class="order-summary-icon processing">
+
+                            <i class="ri-time-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Processing
+                            </span>
+
+                            <strong id="processingOrdersCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="order-summary-card">
+
+                        <div class="order-summary-icon shipped">
+
+                            <i class="ri-truck-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Shipped
+                            </span>
+
+                            <strong id="shippedOrdersCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="order-summary-card">
+
+                        <div class="order-summary-icon delivered">
+
+                            <i class="ri-checkbox-circle-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Delivered
+                            </span>
+
+                            <strong id="deliveredOrdersCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="order-summary-card">
+
+                        <div class="order-summary-icon total">
+
+                            <i class="ri-file-list-3-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Orders
+                            </span>
+
+                            <strong id="totalOrdersManagement">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                ORDER MANAGEMENT
+                            </span>
+
+                            <h3>
+                                All Orders
+                            </h3>
+
+                        </div>
+
+
+                        <div class="panel-header-actions">
+
+                            <select
+                                id="orderStatusFilter"
+                                class="table-filter"
+                            >
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Confirmed">
+                                    Confirmed
+                                </option>
+
+                                <option value="Shipped">
+                                    Shipped
+                                </option>
+
+                                <option value="Delivered">
+                                    Delivered
+                                </option>
+
+                                <option value="Cancelled">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+
+                            <input
+                                type="text"
+                                id="orderSearch"
+                                class="table-search"
+                                placeholder="Search orders..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>ORDER</th>
+                                    <th>CUSTOMER</th>
+                                    <th>CITY</th>
+                                    <th>TOTAL</th>
+                                    <th>PAYMENT</th>
+                                    <th>STATUS</th>
+                                    <th>TRACKING</th>
+                                    <th>DATE</th>
+                                    <th>ACTION</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="ordersTableBody"
+                            ></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CUSTOMERS
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="customersSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CUSTOMER MANAGEMENT
+                        </span>
+
+                        <h1>
+                            Customers
+                        </h1>
+
+                        <p>
+                            View registered customers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                USERS
+                            </span>
+
+                            <h3>
+                                All Customers
+                            </h3>
+
+                        </div>
+
+
+                        <input
+                            type="text"
+                            id="customerSearch"
+                            class="table-search"
+                            placeholder="Search customers..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>CUSTOMER</th>
+                                    <th>EMAIL</th>
+                                    <th>PHONE</th>
+                                    <th>ORDERS</th>
+                                    <th>JOINED</th>
+                                    <th>ACTION</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="usersTable"
+                            ></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ANALYTICS
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="analyticsSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PERFORMANCE CENTER
+                        </span>
+
+                        <h1>
+                            Analytics
+                        </h1>
+
+                        <p>
+                            Track sales, revenue, customers and product performance.
+                        </p>
+
+                    </div>
+
+
+                    <div class="analytics-actions">
+
+                        <select
+                            id="analyticsPeriod"
+                            class="period-select"
+                        >
+
+                            <option value="week">
+                                Last 7 Days
+                            </option>
+
+                            <option value="month">
+                                Last 30 Days
+                            </option>
+
+                            <option value="year">
+                                This Year
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="refreshAnalyticsBtn"
+                        >
+
+                            <i class="ri-refresh-line"></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="analytics-kpi-grid">
+
+
+                    <div class="analytics-kpi-card">
+
+                        <div class="analytics-kpi-head">
+
+                            <span>
+                                TOTAL SALES
+                            </span>
+
+                            <div class="analytics-kpi-icon">
+
+                                <i class="ri-money-dollar-circle-line"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <strong id="analyticsTotalSales">
+                            Rs. 0
+                        </strong>
+
+
+                        <div class="analytics-kpi-footer">
+
+                            <span
+                                class="positive"
+                                id="analyticsSalesGrowth"
+                            >
+                                +0%
+                            </span>
+
+                            <span>
+                                vs previous period
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="analytics-kpi-card">
+
+                        <div class="analytics-kpi-head">
+
+                            <span>
+                                TOTAL ORDERS
+                            </span>
+
+                            <div class="analytics-kpi-icon">
+
+                                <i class="ri-shopping-bag-3-line"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <strong id="analyticsTotalOrders">
+                            0
+                        </strong>
+
+
+                        <div class="analytics-kpi-footer">
+
+                            <span
+                                class="positive"
+                                id="analyticsOrdersGrowth"
+                            >
+                                +0%
+                            </span>
+
+                            <span>
+                                order growth
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="analytics-kpi-card">
+
+                        <div class="analytics-kpi-head">
+
+                            <span>
+                                AVERAGE ORDER
+                            </span>
+
+                            <div class="analytics-kpi-icon">
+
+                                <i class="ri-line-chart-line"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <strong id="analyticsAverageOrder">
+                            Rs. 0
+                        </strong>
+
+
+                        <div class="analytics-kpi-footer">
+
+                            <span>
+                                AOV
+                            </span>
+
+                            <span>
+                                average order value
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="analytics-kpi-card">
+
+                        <div class="analytics-kpi-head">
+
+                            <span>
+                                CONVERSION
+                            </span>
+
+                            <div class="analytics-kpi-icon">
+
+                                <i class="ri-pulse-line"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <strong id="analyticsConversion">
+                            0%
+                        </strong>
+
+
+                        <div class="analytics-kpi-footer">
+
+                            <span>
+                                STORE
+                            </span>
+
+                            <span>
+                                performance rate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="analytics-main-grid">
+
+
+                    <div class="panel analytics-main-card">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    REVENUE PERFORMANCE
+                                </span>
+
+                                <h3>
+                                    Sales & Revenue Overview
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container analytics-large-chart">
+
+                            <canvas
+                                id="analyticsChart"
+                            ></canvas>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="panel analytics-order-performance">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    ORDER PERFORMANCE
+                                </span>
+
+                                <h3>
+                                    Order Breakdown
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analytics-donut-wrap">
+
+                            <canvas
+                                id="analyticsOrderChart"
+                            ></canvas>
+
+
+                            <div class="analytics-donut-center">
+
+                                <strong id="analyticsOrderTotal">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Orders
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="analytics-status-list"
+                            id="analyticsStatusList"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="analytics-grid">
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    PRODUCTS
+                                </span>
+
+                                <h3>
+                                    Category Performance
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="categoryChart"
+                            ></canvas>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    TOP SELLERS
+                                </span>
+
+                                <h3>
+                                    Best Selling Products
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="top-products-list"
+                            id="topProductsList"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="panel analytics-insights">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                STORE INSIGHTS
+                            </span>
+
+                            <h3>
+                                Performance Insights
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="insights-grid"
+                        id="analyticsInsights"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COUPONS
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="couponsSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PROMOTIONS
+                        </span>
+
+                        <h1>
+                            Coupons
+                        </h1>
+
+                        <p>
+                            Create and manage discount coupons for your customers.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="createCouponBtn"
+                    >
+
+                        <i class="ri-add-line"></i>
+
+                        Create Coupon
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- COUPON SUMMARY -->
+
+                <div class="coupon-summary-grid">
+
+
+                    <div class="coupon-summary-card">
+
+                        <div class="coupon-summary-icon">
+
+                            <i class="ri-coupon-3-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Coupons
+                            </span>
+
+                            <strong id="totalCouponsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="coupon-summary-card">
+
+                        <div class="coupon-summary-icon active">
+
+                            <i class="ri-checkbox-circle-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Active Coupons
+                            </span>
+
+                            <strong id="activeCouponsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="coupon-summary-card">
+
+                        <div class="coupon-summary-icon used">
+
+                            <i class="ri-shopping-bag-3-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Coupons Used
+                            </span>
+
+                            <strong id="usedCouponsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="coupon-summary-card">
+
+                        <div class="coupon-summary-icon discount">
+
+                            <i class="ri-percent-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Average Discount
+                            </span>
+
+                            <strong id="totalCouponDiscount">
+                                0%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COUPON PANEL -->
+
+                <div class="panel coupon-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                DISCOUNT MANAGEMENT
+                            </span>
+
+                            <h3>
+                                All Coupons
+                            </h3>
+
+                        </div>
+
+
+                        <div class="panel-header-actions">
+
+                            <select
+                                id="couponStatusFilter"
+                                class="table-filter"
+                            >
+
+                                <option value="all">
+                                    All Coupons
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                                <option value="expired">
+                                    Expired
+                                </option>
+
+                            </select>
+
+
+                            <input
+                                type="text"
+                                id="couponSearch"
+                                class="table-search"
+                                placeholder="Search coupon..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="admin-table coupon-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        COUPON
+                                    </th>
+
+                                    <th>
+                                        DISCOUNT
+                                    </th>
+
+                                    <th>
+                                        MIN. ORDER
+                                    </th>
+
+                                    <th>
+                                        USED
+                                    </th>
+
+                                    <th>
+                                        EXPIRY
+                                    </th>
+
+                                    <th>
+                                        STATUS
+                                    </th>
+
+                                    <th>
+                                        ACTION
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="couponsTableBody"
+                            ></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 HOMEPAGE
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="homepageSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            STORE FRONT
+                        </span>
+
+                        <h1>
+                            Homepage
+                        </h1>
+
+                        <p>
+                            Control products displayed on your homepage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="homepage-grid">
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    SELECTED FOR YOU
+                                </span>
+
+                                <h3>
+                                    Selected For You
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="homepage-products"
+                            id="homepageProducts"
+                        ></div>
+
+                    </div>
+
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    LATEST COLLECTION
+                                </span>
+
+                                <h3>
+                                    Latest Collection
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="homepage-products"
+                            id="latestCollectionProducts"
+                        ></div>
+
+                    </div>
+
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    SALE
+                                </span>
+
+                                <h3>
+                                    Sale Products
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="homepage-products"
+                            id="saleProducts"
+                        ></div>
+
+                    </div>
+
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    FEATURED
+                                </span>
+
+                                <h3>
+                                    Featured Products
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="homepage-products"
+                            id="featuredProducts"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SETTINGS
+            ================================================== -->
+
+            <section
+                class="page-section"
+                id="settingsSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            STORE CONFIGURATION
+                        </span>
+
+                        <h1>
+                            Settings
+                        </h1>
+
+                        <p>
+                            Manage your ZM LABEL store information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-layout">
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    STORE
+                                </span>
+
+                                <h3>
+                                    Store Details
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-form">
+
+
+                            <div class="form-group">
+
+                                <label for="settingStoreName">
+                                    Store Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="settingStoreName"
+                                    value="ZM LABEL"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="settingStoreEmail">
+                                    Store Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="settingStoreEmail"
+                                    value="zmlabelsupport@gmail.com"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="settingStorePhone">
+                                    Store Phone
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="settingStorePhone"
+                                    placeholder="+92"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="settingStoreAddress">
+                                    Store Address
+                                </label>
+
+                                <textarea
+                                    id="settingStoreAddress"
+                                    rows="4"
+                                    placeholder="Store address"
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="primary-button"
+                                id="saveStoreSettings"
+                            >
+
+                                <i class="ri-save-line"></i>
+
+                                Save Settings
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    ADMIN
+                                </span>
+
+                                <h3>
+                                    Admin Preferences
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-options">
+
+
+                            <label class="setting-option">
+
+                                <div>
+
+                                    <strong>
+                                        Email Notifications
+                                    </strong>
+
+                                    <span>
+                                        Receive notifications for new orders.
+                                    </span>
+
+                                </div>
+
+
+                                <input
+                                    type="checkbox"
+                                    id="emailNotifications"
+                                    checked
+                                >
+
+                            </label>
+
+
+
+                            <label class="setting-option">
+
+                                <div>
+
+                                    <strong>
+                                        Low Stock Alerts
+                                    </strong>
+
+                                    <span>
+                                        Show alerts when stock is low.
+                                    </span>
+
+                                </div>
+
+
+                                <input
+                                    type="checkbox"
+                                    id="lowStockAlerts"
+                                    checked
+                                >
+
+                            </label>
+
+
+
+                            <label class="setting-option">
+
+                                <div>
+
+                                    <strong>
+                                        Order Notifications
+                                    </strong>
+
+                                    <span>
+                                        Notify when a new order arrives.
+                                    </span>
+
+                                </div>
+
+
+                                <input
+                                    type="checkbox"
+                                    id="orderNotifications"
+                                    checked
+                                >
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     ORDER MANAGEMENT MODAL
+========================================================= -->
+
+<div
+    class="admin-modal"
+    id="orderManagementModal"
+    aria-hidden="true"
+    inert
+>
+
+    <div
+        class="admin-modal-overlay"
+        id="orderModalOverlay"
+    ></div>
+
+
+    <div
+        class="admin-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="orderModalTitle"
+        tabindex="-1"
+    >
+
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    ORDER MANAGEMENT
+                </span>
+
+                <h2 id="orderModalTitle">
+                    Update Order
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeOrderModal"
+                aria-label="Close order management"
+            >
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="order-modal-content">
+
+
+            <div class="order-modal-info">
+
+
+                <div>
+
+                    <span>
+                        Order ID
+                    </span>
+
+                    <strong id="modalOrderId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Customer
+                    </span>
+
+                    <strong id="modalCustomerName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="modalCustomerEmail">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="modalOrderStatus">
+                    Order Status
+                </label>
+
+                <select
+                    id="modalOrderStatus"
+                >
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Confirmed">
+                        Confirmed
+                    </option>
+
+                    <option value="Shipped">
+                        Shipped
+                    </option>
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+                    <option value="Cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div
+                class="form-group"
+                id="trackingFieldGroup"
+            >
+
+                <label for="modalTrackingNumber">
+                    Tracking ID
+                </label>
+
+                <input
+                    type="text"
+                    id="modalTrackingNumber"
+                    name="trackingNumber"
+                    placeholder="e.g. TRK-2026-00125"
+                    autocomplete="off"
+                >
+
+                <small>
+                    Enter the tracking number provided by your courier.
+                    When the order is shipped, this tracking ID can be sent to the customer.
+                </small>
+
+            </div>
+
+
+
+            <div
+                class="form-group"
+                id="trackingUrlGroup"
+            >
+
+                <label for="modalTrackingUrl">
+                    Tracking URL
+                </label>
+
+                <input
+                    type="url"
+                    id="modalTrackingUrl"
+                    name="trackingUrl"
+                    placeholder="https://courier.com/track/..."
+                    autocomplete="off"
+                >
+
+                <small>
+                    Optional. Add the courier tracking page if available.
+                </small>
+
+            </div>
+
+
+
+            <div class="email-status-box">
+
+                <div class="email-status-icon">
+
+                    <i class="ri-mail-send-line"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Customer Shipping Email
+                    </strong>
+
+                    <span>
+                        When an order is marked as shipped,
+                        the customer should receive the tracking information by email.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="admin-modal-footer">
+
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelOrderUpdate"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-button"
+                id="saveOrderUpdate"
+            >
+
+                <i class="ri-save-line"></i>
+
+                Update Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     COUPON CREATE / EDIT MODAL
+========================================================= -->
+
+<div
+    class="admin-modal"
+    id="couponModal"
+    aria-hidden="true"
+    inert
+>
+
+    <div
+        class="admin-modal-overlay"
+        id="couponModalOverlay"
+    ></div>
+
+
+    <div
+        class="admin-modal-box coupon-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="couponModalTitle"
+        tabindex="-1"
+    >
+
+
+        <!-- HEADER -->
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PROMOTION MANAGEMENT
+                </span>
+
+                <h2 id="couponModalTitle">
+                    Create Coupon
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeCouponModal"
+                aria-label="Close coupon modal"
+            >
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="coupon-modal-content">
+
+
+            <!-- COUPON CODE -->
+
+            <div class="form-group">
+
+                <label for="couponCode">
+
+                    Coupon Code
+
+                    <span class="required-mark">
+                        *
+                    </span>
+
+                </label>
+
+
+                <div class="coupon-code-input">
+
+                    <input
+                        type="text"
+                        id="couponCode"
+                        name="couponCode"
+                        placeholder="e.g. ZM20"
+                        maxlength="30"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    <button
+                        type="button"
+                        class="generate-code-button"
+                        id="generateCouponCode"
+                    >
+
+                        <i class="ri-magic-line"></i>
+
+                        Generate
+
+                    </button>
+
+                </div>
+
+
+                <small>
+                    Create any coupon code you want.
+                    Example: ZM20, WELCOME10, EID25.
+                </small>
+
+            </div>
+
+
+
+            <!-- DISCOUNT + MINIMUM ORDER -->
+
+            <div class="coupon-form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="couponDiscount">
+
+                        Discount Percentage
+
+                        <span class="required-mark">
+                            *
+                        </span>
+
+                    </label>
+
+
+                    <div class="percentage-input">
+
+                        <input
+                            type="number"
+                            id="couponDiscount"
+                            name="discount"
+                            min="1"
+                            max="100"
+                            step="1"
+                            placeholder="20"
+                            required
+                        >
+
+                        <span>
+                            %
+                        </span>
+
+                    </div>
+
+
+                    <small>
+                        Choose any discount from 1% to 100%.
+                    </small>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="couponMinimumOrder">
+
+                        Minimum Order
+
+                    </label>
+
+
+                    <div class="currency-input">
+
+                        <span>
+                            Rs.
+                        </span>
+
+                        <input
+                            type="number"
+                            id="couponMinimumOrder"
+                            name="minimumOrder"
+                            min="0"
+                            placeholder="0"
+                        >
+
+                    </div>
+
+
+                    <small>
+                        Leave 0 if there is no minimum order.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EXPIRY + USAGE -->
+
+            <div class="coupon-form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="couponExpiry">
+
+                        Expiry Date
+
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="couponExpiry"
+                        name="expiry"
+                    >
+
+
+                    <small>
+                        Leave empty for no expiry.
+                    </small>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="couponUsageLimit">
+
+                        Usage Limit
+
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="couponUsageLimit"
+                        name="usageLimit"
+                        min="0"
+                        placeholder="Unlimited"
+                    >
+
+
+                    <small>
+                        Set 0 for unlimited usage.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER LIMIT -->
+
+            <div class="form-group">
+
+                <label for="couponPerCustomer">
+
+                    Limit Per Customer
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="couponPerCustomer"
+                    name="perCustomerLimit"
+                    min="0"
+                    placeholder="Unlimited"
+                >
+
+
+                <small>
+                    Example: 1 means each customer can use this coupon once.
+                </small>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="coupon-status-setting">
+
+                <div>
+
+                    <strong>
+                        Coupon Status
+                    </strong>
+
+                    <span>
+                        Customers can use this coupon when it is active.
+                    </span>
+
+                </div>
+
+
+                <label class="coupon-switch">
+
+                    <input
+                        type="checkbox"
+                        id="couponActive"
+                        checked
+                    >
+
+                    <span class="coupon-switch-slider"></span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- PREVIEW -->
+
+            <div class="coupon-preview">
+
+                <div class="coupon-preview-left">
+
+                    <span>
+                        COUPON PREVIEW
+                    </span>
+
+                    <strong id="couponPreviewCode">
+                        ZM20
+                    </strong>
+
+                </div>
+
+
+                <div class="coupon-preview-right">
+
+                    <strong id="couponPreviewDiscount">
+                        20%
+                    </strong>
+
+                    <span>
+                        OFF
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <div class="admin-modal-footer">
+
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelCouponBtn"
+            >
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-button"
+                id="saveCouponBtn"
+            >
+
+                <i class="ri-coupon-3-line"></i>
+
+                Save Coupon
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+>
+
+    <i class="ri-check-line"></i>
+
+    <span id="toastMessage">
+        Done
+    </span>
+
+</div>
+
+
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =========================================================
+     ADMIN JS
+========================================================= -->
+
+<script src="config.js"></script>
+<script src="admin.js"></script>
+
+
+</body>
+</html>
