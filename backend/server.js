@@ -97,5 +97,5 @@ app.use((err, req, res, next) => {
 // ==========================================
 // SERVER
 // ==========================================
-const PORT = process.env.PORT || 5000;
+
 module.exports = app
