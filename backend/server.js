@@ -6,13 +6,11 @@ const path = require("path");
 // ==========================================
 // LOAD ENVIRONMENT VARIABLES FIRST
 // ==========================================
-
 dotenv.config();
 
 // ==========================================
 // DATABASE
 // ==========================================
-
 const connectDB = require("./config/db");
 
 // ==========================================
@@ -29,166 +27,75 @@ const reviewRoutes = require("./routes/reviewRoutes");
 const couponRoutes = require("./routes/couponRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
-
-// ==========================================
-// CONNECT DATABASE
-// ==========================================
-
-connectDB();
-
 // ==========================================
 // CREATE APP
 // ==========================================
-
 const app = express();
+
+// ==========================================
+// CONNECT DATABASE - Vercel ke liye yahan shift kiya
+// ==========================================
+connectDB();
 
 // ==========================================
 // MIDDLEWARE
 // ==========================================
-
 app.use(cors());
-
 app.use(express.json());
-
-app.use(
-    express.urlencoded({
-        extended: true
-    })
-);
+app.use(express.urlencoded({ extended: true }));
 
 // ==========================================
 // UPLOADS
 // ==========================================
-
-app.use(
-    "/uploads",
-    express.static(
-        path.join(__dirname, "uploads")
-    )
-);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ==========================================
 // HOME
 // ==========================================
-
 app.get("/", (req, res) => {
-
     res.json({
         success: true,
-        message:
-            "🚀 ZM LABEL Backend Running Successfully..."
+        message: "🚀 ZM LABEL Backend Running Successfully..."
     });
-
 });
 
 // ==========================================
 // API ROUTES
 // ==========================================
-
-app.use(
-    "/api/auth",
-    authRoutes
-);
-
-app.use(
-    "/api/products",
-    productRoutes
-);
-
-app.use(
-    "/api/orders",
-    orderRoutes
-);
-
-app.use(
-    "/api/cart",
-    cartRoutes
-);
-
-app.use(
-    "/api/wishlist",
-    wishlistRoutes
-);
-
-app.use(
-    "/api/ai",
-    aiRoutes
-);
-
-app.use(
-    "/api/reviews",
-    reviewRoutes
-);
-
-app.use(
-    "/api/admin",
-    adminRoutes
-);
-
+app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/wishlist", wishlistRoutes);
+app.use("/api/ai", aiRoutes);
+app.use("/api/reviews", reviewRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/coupons", couponRoutes);
+app.use("/api/payments", paymentRoutes);
 
-app.use(
-    "/api/payments",
-    paymentRoutes
-);
 // ==========================================
 // 404 ROUTE
 // ==========================================
-
 app.use((req, res) => {
-
     res.status(404).json({
-
         success: false,
-
-        message:
-            `Route not found: ${req.method} ${req.originalUrl}`
-
+        message: `Route not found: ${req.method} ${req.originalUrl}`
     });
-
 });
 
 // ==========================================
-// GLOBAL ERROR HANDLER
+// GLOBAL ERROR HANDLER - chota kar diya
 // ==========================================
-
 app.use((err, req, res, next) => {
-
-    console.error("=================================");
-    console.error("SERVER ERROR");
-    console.error("=================================");
-
-    console.error(
-        "Message:",
-        err?.message
-    );
-
-    console.error(
-        "Stack:",
-        err?.stack
-    );
-
-    res.status(
-        err?.status || 500
-    ).json({
-
+    console.error(err.message);
+    res.status(err?.status || 500).json({
         success: false,
-
-        message:
-            err?.message ||
-            "Internal server error."
-
+        message: err?.message || "Internal server error."
     });
-
 });
 
 // ==========================================
 // SERVER
 // ==========================================
-
-const PORT =
-    process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 module.exports = app
-
-    
-    
