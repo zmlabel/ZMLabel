@@ -190,20 +190,5 @@ const PORT =
     process.env.PORT || 5000;
 module.exports = app
 
-        console.log(
-            process.env.OPENAI_API_KEY
-                ? "✅ OpenAI API Key Loaded"
-                : "❌ OpenAI API Key NOT Loaded"
-        );
-
-        console.log(
-            process.env.OPENAI_MODEL
-                ? `✅ OpenAI Model: ${process.env.OPENAI_MODEL}`
-                : "⚠️ OpenAI Model not configured"
-        );
-
-        console.log(
-            "================================="
-        );
-
+    
     
